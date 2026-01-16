@@ -60,7 +60,7 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       /* Lightweight noise pattern */
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
       pointer-events: none;
       z-index: 9999;
       opacity: 0.03; 
@@ -334,6 +334,9 @@
     .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     @media (max-width: 980px){
+      /* HIDE HEADER BUTTON ON MOBILE to fix congestion */
+      .nav-right .btn { display: none; }
+
       .nav-links{
         display: flex; /* Changed from none to flex for toggle */
         position: fixed;
@@ -840,7 +843,44 @@
     }
 
     @media (max-width: 980px){
-      .nav-links{display:none}
+      /* HIDE HEADER BUTTON ON MOBILE to fix congestion */
+      .nav-right .btn { display: none; }
+
+      .nav-links{
+        display: flex; /* Changed from none to flex for toggle */
+        position: fixed;
+        top: var(--navH);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--navH));
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background: rgba(5,8,19,0.98);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255,255,255,.10);
+        padding: 40px 20px;
+        gap: 20px;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 40;
+      }
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+      .nav-links a {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+      }
+      .menu-toggle { display: flex; }
+      
       .hero-grid{grid-template-columns:1fr}
       .grid3{grid-template-columns:1fr}
       .pricing{grid-template-columns:1fr}
