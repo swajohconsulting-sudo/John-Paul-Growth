@@ -1348,8 +1348,17 @@
       <p class="sub">Send us a message and we'll get back to you within 24 hours.</p>
 
       <div class="card form-card">
+        
+        <!-- SUCCESS MESSAGE (Hidden by default) -->
+        <div id="contactSuccess" style="display:none; text-align:center; padding:40px 20px;">
+          <div style="font-size:40px; margin-bottom:10px;">✨</div>
+          <h3 class="h3" style="color:#fff; margin-bottom:10px;">Message Sent!</h3>
+          <p class="sub" style="margin:0;">Thanks for reaching out. We will get back to you shortly.</p>
+        </div>
+
         <!-- Standard Netlify Form - Separate from Order Form -->
-        <form name="general-contact" method="POST" data-netlify="true" action="/success.html">
+        <!-- UPDATED: Added id="contactForm" and removed action="/success.html" to handle via JS -->
+        <form name="general-contact" method="POST" data-netlify="true" id="contactForm">
           <input type="hidden" name="form-name" value="general-contact" />
           
           <div class="field-row">
@@ -1359,7 +1368,7 @@
           
           <textarea class="input" name="message" placeholder="How can we help?" style="margin-top:10px; min-height:120px;" required></textarea>
 
-          <button class="btn btn-outline" style="width:100%; margin-top:12px; justify-content: center;" type="submit">
+          <button id="contactBtn" class="btn btn-outline" style="width:100%; margin-top:12px; justify-content: center;" type="submit">
             Send Message
           </button>
         </form>
@@ -1514,7 +1523,43 @@
     })();
 
     // --------------------------------------------------------
-    // HANDLE FORM SUBMISSION & PAYPAL REDIRECT
+    // HANDLE CONTACT FORM (AJAX) - NEW
+    // --------------------------------------------------------
+    const contactForm = document.getElementById('contactForm');
+    const contactBtn = document.getElementById('contactBtn');
+    const contactSuccess = document.getElementById('contactSuccess');
+
+    if(contactForm){
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Loading state
+        const originalText = contactBtn.innerText;
+        contactBtn.innerText = "Sending...";
+        contactBtn.disabled = true;
+
+        const formData = new FormData(contactForm);
+
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+          // Hide form, show success message
+          contactForm.style.display = 'none';
+          contactSuccess.style.display = 'block';
+        })
+        .catch((error) => {
+          alert("Error sending message. Please email us directly.");
+          contactBtn.innerText = originalText;
+          contactBtn.disabled = false;
+        });
+      });
+    }
+
+    // --------------------------------------------------------
+    // HANDLE ORDER FORM SUBMISSION & PAYPAL REDIRECT
     // --------------------------------------------------------
     const orderForm = document.getElementById('orderForm');
     const submitBtn = document.getElementById('submitBtn');
