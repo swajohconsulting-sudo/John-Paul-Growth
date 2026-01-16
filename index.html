@@ -60,7 +60,7 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       /* Lightweight noise pattern */
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
       pointer-events: none;
       z-index: 9999;
       opacity: 0.03; 
@@ -410,9 +410,10 @@
       border-radius:999px;
       border:1px solid rgba(255,255,255,.16);
       background: rgba(255,255,255,.06);
-      color:rgba(184,198,255,.82);
-      font-weight:1100;
+      color:rgba(184,198,255,.95);
+      font-weight:1200;
       font-size:13px;
+      letter-spacing: 0.5px;
     }
     h1{
       margin:14px 0 10px;
@@ -431,7 +432,8 @@
       margin:0 0 18px;
       max-width: 68ch;
       font-size: clamp(16px, 1.55vw, 18px);
-      color:var(--muted);
+      color:var(--text);
+      opacity: 0.9;
     }
     .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
     .trust{
@@ -933,17 +935,17 @@
   <main id="top" class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="reveal">
-          <span class="pill">⚡ Pick a demo • Choose a package • Launch fast</span>
-          <h1>Premium websites that turn <span class="grad">visitors</span> into calls and bookings.</h1>
+        <!-- REMOVED 'reveal' class from here so content is seen immediately -->
+        <div>
+          <span class="pill">⚡ High-End Design • One-Time Fee • Starts at $199</span>
+          <h1>Stop losing customers to outdated websites.</h1>
           <p class="lead">
-            Choose a modern template, pick your package, and we’ll customize everything for your business.
-            Clean, fast, and built to make people take action.
+            Get a premium, mobile-first website designed for your business in 3 days. No monthly builders. No tech headaches. Just results.
           </p>
 
           <div class="actions">
             <a class="btn btn-primary laser btn-moving-border" href="#pricing">
-              Design your website now
+              Get Started for $199
               <span class="laser-sheen" aria-hidden="true"></span>
             </a>
             <a class="btn btn-outline" href="#demos">View live demos</a>
@@ -958,7 +960,8 @@
           </div>
         </div>
 
-        <aside class="card hero-panel reveal delay-200">
+        <!-- Faster animation for side panel -->
+        <aside class="card hero-panel reveal delay-100">
           <p class="kicker">WHAT HAPPENS NEXT</p>
           <p class="miniTitle">We customize, you approve, we publish.</p>
           <p class="miniSub">Fast, simple, and polished — no tech headaches.</p>
@@ -1500,8 +1503,8 @@
     <div class="container">
       <div class="card cta">
         <div>
-          <h2 class="title" style="margin:0 0 6px">Ready to launch your website?</h2>
-          <p class="sub" style="margin:0">Pick a package, submit your details, and we’ll start building.</p>
+          <h2 class="title" style="margin:0 0 6px">Get your premium website today.</h2>
+          <p class="sub" style="margin:0">For just $199 one-time. Stop waiting. Start growing.</p>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap">
           <a class="btn btn-primary laser btn-moving-border" href="#pricing">
