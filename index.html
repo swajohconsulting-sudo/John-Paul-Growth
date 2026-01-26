@@ -6,6 +6,11 @@
   <title>John Paul Growth | Premium Websites for Small Businesses</title>
   <meta name="description" content="Pick a live demo, choose a package, and launch a premium website fast. John Paul Growth builds modern websites for small businesses." />
 
+  <!-- GSAP & Lenis for High-End Animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
   <style>
     :root{
       --bg0:#050813;
@@ -32,7 +37,14 @@
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    
+    /* Lenis Smooth Scroll Recommended CSS */
+    html.lenis { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto; }
+    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+    .lenis.lenis-stopped { overflow: hidden; }
+    .lenis.lenis-scrolling iframe { pointer-events: none; }
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
@@ -60,11 +72,42 @@
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       /* Lightweight noise pattern */
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
       pointer-events: none;
       z-index: 9999;
       opacity: 0.03; 
       mix-blend-mode: overlay;
+    }
+
+    /* NEW: HERO CANVAS (The "Apple-like" animated background) */
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Behind the content */
+      opacity: 0.6; /* Subtle */
+      pointer-events: none; /* Let clicks pass through */
+    }
+
+    /* NEW: APPLE-STYLE TEXT SHIMMER */
+    .text-shimmer {
+      background: linear-gradient(
+        110deg,
+        #EAF0FF 35%,
+        rgba(255, 255, 255, 0.9) 50%,
+        #EAF0FF 65%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 5s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 100% 0; }
+      100% { background-position: -100% 0; }
     }
 
     @keyframes drift {
@@ -380,6 +423,9 @@
       section{padding:52px 0}
       :root{ --navH: 76px; }
       .video-frame{max-width: 100%;}
+      
+      .comparison-grid { grid-template-columns: 1fr; }
+      .timeline-line { display: none; } /* Hide horizontal line on mobile */
     }
 
     /* SCROLL REVEAL ANIMATIONS */
@@ -451,15 +497,31 @@
       background: rgba(255,255,255,.05);
     }
 
-    /* HERO SIDE */
+    /* HERO SIDE & ASSEMBLY ANIMATION */
     .hero-panel{
       padding:18px; position:relative; overflow:hidden;
       transform-style: preserve-3d;
-      transition: transform 0.2s ease;
+      /* Initial State handled by GSAP now */
+      opacity: 1; /* Reset to visible so GSAP can handle from 0 */
     }
-    .hero-panel:hover {
-      transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+    
+    /* Removed the CSS :hover transform to let JS handle the 3D physics */
+    
+    /* NEW: Light Sweep Overlay for Animation */
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: -100%; 
+      width: 50%; 
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transform: skewX(-20deg);
+      pointer-events: none;
+      z-index: 10;
+      /* Animation handled by GSAP */
     }
+
     .hero-panel:before{
       content:"";
       position:absolute; inset:-2px;
@@ -522,6 +584,128 @@
     @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); } /* Shift by half since we duplicate content */
+    }
+
+    /* NEW: BEFORE/AFTER VISUAL COMPARISON SECTION */
+    .comparison-section {
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .comp-box {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px; /* Increased padding for frame effect */
+      background: #000; /* Dark frame background */
+    }
+    .comp-old {
+      border: 1px solid #333;
+      opacity: 0.9;
+      transform-origin: center right;
+    }
+    .comp-new {
+      background: #050813;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 0 50px rgba(6,182,212,0.15);
+      transform-origin: center left;
+    }
+    
+    .comp-label {
+      position: absolute;
+      top: 15px; left: 15px;
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
+      padding: 6px 10px; border-radius: 6px;
+      z-index: 10;
+    }
+    .label-old { background: #333; color: #fff; }
+    .label-new { background: linear-gradient(135deg, var(--brand), var(--brand2)); color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+    .mini-stars { width: 20px; height: 2px; background: #fbbf24; border-radius: 2px; }
+
+    /* BROWSER FRAME & SCREENSHOT STYLES (NEW) */
+    .browser-frame {
+      width: 100%; height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      position: relative;
+      background: #111;
+    }
+    .browser-header {
+      height: 24px;
+      background: #1a1a1a;
+      border-bottom: 1px solid #333;
+      display: flex; align-items: center; padding: 0 10px; gap: 6px;
+      flex: 0 0 auto;
+    }
+    .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: #444; }
+    .browser-dot.red { background: #ff5f57; }
+    .browser-dot.yellow { background: #febc2e; }
+    .browser-dot.green { background: #28c840; }
+    .browser-address {
+      flex: 1; height: 14px; background: #2a2a2a; border-radius: 3px; margin-left: 10px;
+    }
+    
+    .screenshot-container {
+      flex: 1; position: relative; overflow: hidden; background: #000;
+    }
+    .screenshot-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* PREMIUM FRAME SPECIFICS */
+    .browser-frame.premium {
+      border: 1px solid rgba(255,255,255,0.15);
+      background: #050813;
+    }
+    .browser-frame.premium .browser-header {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .browser-frame.premium .browser-address {
+      background: rgba(255,255,255,0.1);
+    }
+    /* Glass Reflection Overlay */
+    .glass-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 50%);
+      pointer-events: none;
+      z-index: 5;
+    }
+    /* Sweep Highlight */
+    .sweep-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+      transform: translateX(-100%);
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    /* SHATTER SLICES (Generated by JS) */
+    .shatter-slice {
+      position: absolute;
+      top: 0; bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      z-index: 10;
     }
 
     /* VIDEO (video-only, medium, glowing border + laser sweep) */
@@ -777,6 +961,20 @@
       font-weight:1250;
       margin-bottom:10px;
     }
+    /* Timeline Animation Line */
+    .steps-container {
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      z-index: -1;
+      opacity: 0.5;
+    }
 
     /* FAQ ACCORDION */
     .faq-item{
@@ -891,6 +1089,9 @@
       section{padding:52px 0}
       :root{ --navH: 76px; }
       .video-frame{max-width: 100%;}
+      
+      .comparison-grid { grid-template-columns: 1fr; }
+      .timeline-line { display: none; } /* Hide horizontal line on mobile */
     }
   </style>
 </head>
@@ -932,13 +1133,17 @@
   </div>
 
   <!-- HERO -->
-  <main id="top" class="hero">
+  <main id="top" class="hero" style="position:relative; overflow:hidden;">
+    <!-- ADDED: The Canvas Element for the animation -->
+    <canvas id="hero-canvas"></canvas>
+
     <div class="container">
       <div class="hero-grid">
-        <!-- REMOVED 'reveal' class from here so content is seen immediately -->
-        <div>
+        <!-- Text Content -->
+        <div class="hero-text-content">
           <span class="pill">⚡ High-End Design • One-Time Fee • Starts at $199</span>
-          <h1>Stop losing customers to outdated websites.</h1>
+          <!-- UPDATED: Added text-shimmer class -->
+          <h1 class="text-shimmer">Stop losing customers to outdated websites.</h1>
           <p class="lead">
             Get a premium, mobile-first website designed for your business in 3 days. No monthly builders. No tech headaches. Just results.
           </p>
@@ -960,8 +1165,8 @@
           </div>
         </div>
 
-        <!-- Faster animation for side panel -->
-        <aside class="card hero-panel reveal delay-100">
+        <!-- Assembly Animation Panel -->
+        <aside class="card hero-panel">
           <p class="kicker">WHAT HAPPENS NEXT</p>
           <p class="miniTitle">We customize, you approve, we publish.</p>
           <p class="miniSub">Fast, simple, and polished — no tech headaches.</p>
@@ -983,7 +1188,7 @@
   </main>
 
   <!-- INFINITE MARQUEE (NEW) -->
-  <div class="marquee-section reveal delay-100">
+  <div class="marquee-section">
     <div class="marquee-track">
       <!-- First Copy -->
       <div class="marquee-item"><span class="marquee-logo">⚡</span><span class="marquee-text">TECHCORP</span></div>
@@ -1007,8 +1212,52 @@
     </div>
   </div>
 
+  <!-- VISUAL COMPARISON SECTION (UPDATED) -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="comparison-grid">
+        
+        <!-- BEFORE: Real Screenshot / Break Apart -->
+        <div class="comp-box comp-old">
+          <div class="comp-label label-old">Before</div>
+          <div class="browser-frame old">
+            <div class="browser-header">
+              <div class="browser-dot red"></div>
+              <div class="browser-dot yellow"></div>
+              <div class="browser-dot green"></div>
+              <div class="browser-address"></div>
+            </div>
+            <!-- ID used for JS slice generation -->
+            <div class="screenshot-container" id="beforeContainer">
+              <img src="img/imgbasic-template.png" alt="Basic Template Website" class="screenshot-img" id="beforeImg">
+            </div>
+          </div>
+        </div>
+
+        <!-- AFTER: Real Screenshot / Assemble -->
+        <div class="comp-box comp-new">
+          <div class="comp-label label-new">Premium</div>
+          <div class="browser-frame premium">
+            <div class="browser-header">
+              <div class="browser-dot red"></div>
+              <div class="browser-dot yellow"></div>
+              <div class="browser-dot green"></div>
+              <div class="browser-address"></div>
+            </div>
+            <div class="screenshot-container">
+              <div class="glass-overlay"></div>
+              <div class="sweep-overlay"></div>
+              <img src="img/imgpremium-demo.png" alt="Premium Modern Website" class="screenshot-img" id="afterImg">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- VIDEO ONLY -->
-  <section id="video" class="reveal delay-100">
+  <section id="video" class="reveal">
     <div class="container video-center">
       <a class="video-frame"
          href="https://youtu.be/n0WePjnSVt4"
@@ -1046,7 +1295,7 @@
 
       <div id="demoGrid" class="demo-grid spotlight-group">
 
-        <a class="laser-card card-spotlight reveal delay-100" data-name="dentist dental clinic" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="dentist dental clinic" target="_blank" rel="noopener"
            href="https://dentistry-ixlxst6ogvb7tfyg.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🦷</div>
@@ -1061,7 +1310,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-200" data-name="lawn landscape landscaping gardening" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="lawn landscape landscaping gardening" target="_blank" rel="noopener"
            href="https://lawn-care-landscaping-2aldseoipq7ypnwp.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🌿</div>
@@ -1076,7 +1325,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-300" data-name="consumer services cleaning handyman repairs" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="consumer services cleaning handyman repairs" target="_blank" rel="noopener"
            href="https://consumer-services-cleaning-handyman-repairs-gzrj432qzuf8ngb0.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🧰</div>
@@ -1091,7 +1340,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal" data-name="hospitality restaurant cafe hotel booking" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="hospitality restaurant cafe hotel booking" target="_blank" rel="noopener"
            href="https://hospitality-restaurant-cafe-hotel-26vz6eg4oyofnidy.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🍽️</div>
@@ -1106,7 +1355,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-100" data-name="lawyers legal attorney solicitor" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="lawyers legal attorney solicitor" target="_blank" rel="noopener"
            href="https://lawyers-legal-services-or8fvqkh4i2qorlf.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">⚖️</div>
@@ -1121,7 +1370,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-200" data-name="accountants accounting tax bookkeeping finance" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="accountants accounting tax bookkeeping finance" target="_blank" rel="noopener"
            href="https://accountants-financial-services-7kahqtvdlfotn83t.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">📊</div>
@@ -1136,7 +1385,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal" data-name="ecommerce store shop products" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="ecommerce store shop products" target="_blank" rel="noopener"
            href="https://ecommerce-store-ugs0aeklne3qmlrn.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🛒</div>
@@ -1151,7 +1400,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-100" data-name="logistics transportation shipping freight" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="logistics transportation shipping freight" target="_blank" rel="noopener"
            href="https://logistics-transportation-pr6mdff2gwy97la8.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🚚</div>
@@ -1166,7 +1415,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-200" data-name="real estate property realtor broker" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="real estate property realtor broker" target="_blank" rel="noopener"
            href="https://real-estate-9z5b2a5rylkwqv0p.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🏠</div>
@@ -1181,7 +1430,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal" data-name="fitness wellness gym training" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="fitness wellness gym training" target="_blank" rel="noopener"
            href="https://fitness-wellness-rn6atwirkwzwporw.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">💪</div>
@@ -1196,7 +1445,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-100" data-name="education coaching tutor training" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="education coaching tutor training" target="_blank" rel="noopener"
            href="https://education-coaching-d14ya5iyvdacsoml.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🎓</div>
@@ -1211,7 +1460,7 @@
           </div>
         </a>
 
-        <a class="laser-card card-spotlight reveal delay-200" data-name="manufacturing factory industrial" target="_blank" rel="noopener"
+        <a class="laser-card card-spotlight" data-name="manufacturing factory industrial" target="_blank" rel="noopener"
            href="https://manufacturing-6ed2q84diy3tueko.builder-preview.com/">
           <div class="laser-top">
             <div class="laser-icon">🏭</div>
@@ -1238,7 +1487,7 @@
       <p class="sub">Modern, clean, conversion-focused pages that make customers trust you and take action.</p>
 
       <div class="grid3 spotlight-group">
-        <div class="card box card-spotlight reveal delay-100">
+        <div class="card box card-spotlight">
           <h3 class="h3">Premium glass design</h3>
           <p class="p">A modern look that instantly feels credible and high-end.</p>
           <ul class="bullets">
@@ -1248,7 +1497,7 @@
           </ul>
         </div>
 
-        <div class="card box card-spotlight reveal delay-200">
+        <div class="card box card-spotlight">
           <h3 class="h3">Contact-ready setup</h3>
           <p class="p">So customers can reach you quickly without friction.</p>
           <ul class="bullets">
@@ -1258,7 +1507,7 @@
           </ul>
         </div>
 
-        <div class="card box card-spotlight reveal delay-300">
+        <div class="card box card-spotlight">
           <h3 class="h3">SEO foundation</h3>
           <p class="p">Best-practice structure to help you show up on Google.</p>
           <ul class="bullets">
@@ -1278,7 +1527,7 @@
       <h2 class="title">Pick your package</h2>
 
       <div class="pricing">
-        <div class="card price-card reveal delay-100">
+        <div class="card price-card">
           <div class="badge">Most popular</div>
           <h3 class="h3">Starter Website</h3>
           <p class="sub" style="margin:6px 0 0">Perfect if you need a professional website fast.</p>
@@ -1305,7 +1554,7 @@
           </a>
         </div>
 
-        <div class="card price-card reveal delay-200">
+        <div class="card price-card">
           <h3 class="h3">Pro Website</h3>
           <p class="sub" style="margin:6px 0 0">More pages + stronger polish for growing businesses.</p>
           <div class="price">$349 <small>one-time</small></div>
@@ -1340,20 +1589,23 @@
       <h2 class="title">From template to live website in 3 steps</h2>
       <p class="sub">Fast, simple, professional. You approve. We publish.</p>
 
-      <div class="steps">
-        <div class="card box reveal delay-100">
+      <div class="steps steps-container">
+        <!-- New Timeline Line for animation -->
+        <div class="timeline-line"></div>
+
+        <div class="card box process-step">
           <div class="step-num">1</div>
           <h3 class="h3">Choose a demo + package</h3>
           <p class="p">Pick your industry template and select Starter or Pro.</p>
         </div>
 
-        <div class="card box reveal delay-200">
+        <div class="card box process-step">
           <div class="step-num">2</div>
           <h3 class="h3">Send your details</h3>
           <p class="p">Logo, services, phone/email, location, and photos (if you have them).</p>
         </div>
 
-        <div class="card box reveal delay-300">
+        <div class="card box process-step">
           <div class="step-num">3</div>
           <h3 class="h3">Approve & launch</h3>
           <p class="p">You review the draft, request edits, and we launch + test everything.</p>
@@ -1537,23 +1789,310 @@
     
     // --------------------------------------------------------
 
-    // Scroll Reveal Logic
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
+    // GSAP + ScrollTrigger Setup
+    gsap.registerPlugin(ScrollTrigger);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
+    // Initialize Lenis for Smooth Scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple-style easing
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // --------------------------------------------------------
+    // HERO "ASSEMBLY" ANIMATION
+    // --------------------------------------------------------
+    const heroPanel = document.querySelector('.hero-panel');
+    const heroItems = document.querySelectorAll('.hero-panel > *');
+
+    // Float initial state - REMOVED rotateX to prevent conflict with mouse tilt
+    gsap.set(heroPanel, { 
+      y: 60, 
+      opacity: 0, 
+      scale: 0.95,
+      transformPerspective: 1000 
+    });
+    
+    gsap.set(heroItems, { y: 20, opacity: 0 }); // Use heroItems instead of undefined heroTextItems
+
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: 1.5,
+      }
+    });
+
+    heroTl.to(heroPanel, {
+      y: 0,
+      opacity: 1,
+      // rotateX: 0, // Removed to allow interactive tilt
+      scale: 1,
+      duration: 1.2,
+      ease: "power2.out"
+    })
+    .to(heroItems, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.1,
+      duration: 1,
+      ease: "power2.out"
+    }, "-=1.0");
+
+    // --------------------------------------------------------
+    // 3D TILT & GLOW LOGIC (Interactive)
+    // --------------------------------------------------------
+    (function() {
+      // Helper function to add tilt to any element
+      function addTiltEffect(selector, maxTilt = 8) {
+        const elements = document.querySelectorAll(selector);
+        
+        elements.forEach(card => {
+          // 1. Create Dynamic Glow Element if not present
+          let glow = card.querySelector('.interactive-glow');
+          if (!glow) {
+            glow = document.createElement('div');
+            glow.classList.add('interactive-glow');
+            glow.style.position = 'absolute';
+            glow.style.top = '0';
+            glow.style.left = '0';
+            glow.style.width = '100%';
+            glow.style.height = '100%';
+            glow.style.background = 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%)';
+            glow.style.opacity = '0';
+            glow.style.transition = 'opacity 0.3s ease';
+            glow.style.pointerEvents = 'none';
+            glow.style.mixBlendMode = 'overlay';
+            glow.style.zIndex = '10'; 
+            glow.style.borderRadius = 'inherit';
+            card.appendChild(glow);
+          }
+
+          // Ensure 3D context
+          gsap.set(card, { transformPerspective: 1000, transformStyle: "preserve-3d" });
+
+          // 2. Mouse Movement Logic
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; 
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Calculate rotation 
+            const rotateX = ((y - centerY) / centerY) * -maxTilt; 
+            const rotateY = ((x - centerX) / centerX) * maxTilt;
+
+            // Apply 3D Rotation via GSAP
+            gsap.to(card, {
+              rotateX: rotateX,
+              rotateY: rotateY,
+              duration: 0.2, 
+              ease: "power1.out",
+              overwrite: 'auto'
+            });
+
+            // Move the Glow
+            gsap.to(glow, {
+              background: `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), transparent 60%)`,
+              duration: 0.1,
+              overwrite: 'auto'
+            });
+            glow.style.opacity = '1';
+          });
+
+          // 3. Mouse Leave (Snap Back)
+          card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+              rotateX: 0,
+              rotateY: 0,
+              duration: 0.8,
+              ease: "elastic.out(1, 0.5)",
+              overwrite: 'auto'
+            });
+            glow.style.opacity = '0';
+          });
+        });
+      }
+
+      // Apply to Hero Panel (existing)
+      addTiltEffect('.hero-panel', 8);
+      
+      // Apply to Comparison Cards (NEW)
+      addTiltEffect('.comp-box', 5); // Slightly subtler tilt for these larger cards
+    })();
+
+
+    // --------------------------------------------------------
+    // BEFORE / AFTER ANIMATION - SCREENSHOT SHATTER
+    // --------------------------------------------------------
+    
+    // 1. Setup Slices for "Break Apart" Effect
+    const beforeContainer = document.getElementById('beforeContainer');
+    const beforeImg = document.getElementById('beforeImg');
+    const sliceCount = 10; // Number of vertical strips
+    const slices = [];
+
+    // NOTE: For this to work perfectly, your image aspect ratio should match the container
+    // We use background-image on divs to simulate slices
+    if(beforeContainer && beforeImg) {
+      const imgSrc = beforeImg.src;
+      // Wait for image or just set immediately (assuming cached/fast)
+      
+      // Hide original image but keep it for sizing
+      beforeImg.style.opacity = 0; 
+
+      for(let i=0; i<sliceCount; i++) {
+        const slice = document.createElement('div');
+        slice.classList.add('shatter-slice');
+        slice.style.backgroundImage = `url(${imgSrc})`;
+        
+        // Position and Size
+        const widthPercent = 100 / sliceCount;
+        slice.style.width = `${widthPercent}%`;
+        slice.style.left = `${i * widthPercent}%`;
+        slice.style.height = '100%';
+        
+        // Background Position to show correct part of image
+        // Slice background size must cover full container width
+        slice.style.backgroundSize = `${100 * sliceCount}% 100%`;
+        // Shift position for each slice to reveal that specific part of image
+        slice.style.backgroundPosition = `${(i / (sliceCount - 1)) * 100}% 0`; 
+        
+        beforeContainer.appendChild(slice);
+        slices.push(slice);
+      }
+    }
+
+    // 2. Premium Elements
+    const compNew = document.querySelector('.comp-new');
+    const afterImg = document.getElementById('afterImg');
+    const sweep = document.querySelector('.sweep-overlay');
+
+    // Initial State
+    gsap.set(compNew, { 
+      autoAlpha: 0, 
+      scale: 0.9,
+      z: -50
+    });
+    
+    // Create Timeline
+    const compTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".comparison-section",
+        start: "top 70%",
+        end: "bottom 70%",
+        scrub: 1, 
+      }
+    });
+
+    // Animation Steps
+    
+    // A. Shatter Old
+    if(slices.length > 0) {
+      compTl.to(slices, {
+        x: (i) => (i % 2 === 0 ? -20 : 20) + (Math.random() * 20 - 10), // Explode outward
+        y: (i) => (Math.random() * 100 - 50), // Random vertical scatter
+        rotation: (i) => (Math.random() * 15 - 7.5), // Tilt
+        opacity: 0,
+        scale: 0.9,
+        duration: 1.5,
+        stagger: {
+          amount: 0.5,
+          from: "random" // Random break pattern
+        },
+        ease: "power2.inOut"
       });
-    }, observerOptions);
+    }
 
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    // B. Assemble New (Overlapping)
+    compTl.to(compNew, {
+      autoAlpha: 1,
+      scale: 1,
+      z: 0,
+      duration: 1.2,
+      ease: "power2.out"
+    }, "-=1.2"); // Start while old is still breaking
 
+    // C. Sweep Highlight
+    compTl.to(sweep, {
+      x: "150%", // Sweep across
+      duration: 1.5,
+      ease: "power1.inOut"
+    }, "-=0.5");
+
+
+    // --------------------------------------------------------
+    // PROCESS TIMELINE ANIMATION
+    // --------------------------------------------------------
+    const steps = document.querySelectorAll('.process-step');
+    const line = document.querySelector('.timeline-line');
+
+    // Draw the line
+    gsap.to(line, {
+      width: "100%",
+      scrollTrigger: {
+        trigger: ".steps-container",
+        start: "top 70%",
+        end: "bottom 80%",
+        scrub: 1
+      }
+    });
+
+    // Pop up cards sequentially
+    steps.forEach((step, i) => {
+      gsap.from(step, {
+        y: 50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: step,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        },
+        delay: i * 0.2
+      });
+    });
+
+    // --------------------------------------------------------
+    // GENERAL REVEAL ANIMATION (Fallbacks)
+    // --------------------------------------------------------
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach((el) => {
+      // If manually handled by specific animations, skip
+      if (el.closest('.hero-panel') || el.closest('.comparison-section') || el.closest('.steps-container')) return;
+
+      gsap.fromTo(el, 
+        { y: 30, opacity: 0 },
+        {
+          y: 0, opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+
+    // --------------------------------------------------------
     // SPOTLIGHT EFFECT LOGIC - OPTIMIZED
+    // --------------------------------------------------------
     (function(){
       // We target container groups to reduce listeners, or just all cards
       const containers = document.querySelectorAll(".spotlight-group");
@@ -1746,6 +2285,131 @@
         });
       });
     }
+
+    // --------------------------------------------------------
+    // HERO CANVAS ANIMATION (The "Apple" Effect)
+    // --------------------------------------------------------
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      
+      // Configuration
+      const particleCount = window.innerWidth < 768 ? 30 : 60; // Fewer on mobile for speed
+      const connectionDistance = 150;
+      const mouseDistance = 200;
+
+      // Resize logic
+      function resize() {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+      }
+      
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.5; // Slow drift
+          this.vy = (Math.random() - 0.5) * 0.5;
+          this.size = Math.random() * 2 + 1;
+        }
+        
+        update(mouse) {
+          // Move
+          this.x += this.vx;
+          this.y += this.vy;
+          
+          // Bounce off edges
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          // Mouse Interaction (The "Wow" Factor)
+          if(mouse.x != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < mouseDistance) {
+              const forceDirectionX = dx / distance;
+              const forceDirectionY = dy / distance;
+              const force = (mouseDistance - distance) / mouseDistance;
+              
+              // Gently push away
+              const directionX = forceDirectionX * force * 0.6;
+              const directionY = forceDirectionY * force * 0.6;
+              this.x -= directionX;
+              this.y -= directionY;
+            }
+          }
+        }
+        
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(139, 92, 246, 0.5)"; // Brand Purple
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        resize();
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      let mouse = { x: null, y: null };
+      
+      // Track mouse only over hero section
+      canvas.parentElement.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      
+      canvas.parentElement.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update(mouse);
+          particles[i].draw();
+          
+          // Draw connections
+          for (let j = i; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < connectionDistance) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(6, 182, 212, ${1 - distance/connectionDistance})`; // Brand Cyan fading
+              ctx.lineWidth = 1;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+        particles = [];
+        init();
+      });
+
+      init();
+      animate();
+    })();
   </script>
 </body>
 </html>
