@@ -1,2415 +1,854 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>John Paul Growth | Premium Websites for Small Businesses</title>
-  <meta name="description" content="Pick a live demo, choose a package, and launch a premium website fast. John Paul Growth builds modern websites for small businesses." />
-
-  <!-- GSAP & Lenis for High-End Animations -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-
-  <style>
-    :root{
-      --bg0:#050813;
-      --bg1:#070B14;
-      --bg2:#0B1220;
-
-      --text:#EAF0FF;
-      --muted: rgba(184,198,255,.82);
-      --muted2: rgba(184,198,255,.62);
-
-      --brand:#06B6D4;
-      --brand2:#8B5CF6;
-      --hot:#F43F5E;
-
-      --glass: rgba(255,255,255,.07);
-      --glass2: rgba(255,255,255,.04);
-      --line: rgba(255,255,255,.12);
-
-      --shadow: 0 22px 70px rgba(0,0,0,.42);
-      --radius: 18px;
-      --max: 1180px;
-
-      --navH: 86px;
-    }
-
-    *{box-sizing:border-box}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Paul | LinkedIn Pipeline Architect</title>
+    <meta name="description" content="Human-centered LinkedIn outreach powered by smart systems—so you get qualified B2B conversations without paid ads.">
     
-    /* Lenis Smooth Scroll Recommended CSS */
-    html.lenis { height: auto; }
-    .lenis.lenis-smooth { scroll-behavior: auto; }
-    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-    .lenis.lenis-stopped { overflow: hidden; }
-    .lenis.lenis-scrolling iframe { pointer-events: none; }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://johnpaulgrowth.com/">
+    <meta property="og:title" content="John Paul | LinkedIn Pipeline Architect">
+    <meta property="og:description" content="Human-centered LinkedIn outreach powered by smart systems—so you get qualified B2B conversations without paid ads.">
+    <meta property="og:image" content="/assets/og-image.png">
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      color:var(--text);
-      /* ANIMATED BACKGROUND */
-      background-color: var(--bg0);
-      background-image:
-        radial-gradient(1200px 720px at 12% 10%, rgba(6,182,212,.15), transparent 58%),
-        radial-gradient(1050px 680px at 92% 4%, rgba(139,92,246,.18), transparent 55%),
-        radial-gradient(900px 680px at 84% 92%, rgba(244,63,94,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 45%, var(--bg1) 100%);
-      background-size: 120% 120%;
-      background-repeat: no-repeat;
-      animation: drift 20s ease-in-out infinite alternate;
-      overflow-x:hidden;
-      line-height:1.55;
-      position: relative;
-      /* Optimization: Promote to layer */
-      will-change: background-position; 
-    }
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://johnpaulgrowth.com/">
+    <meta property="twitter:title" content="John Paul | LinkedIn Pipeline Architect">
+    <meta property="twitter:description" content="Human-centered LinkedIn outreach powered by smart systems—so you get qualified B2B conversations without paid ads.">
+    <meta property="twitter:image" content="/assets/og-image.png">
 
-    /* 2. OPTIMIZED NOISE TEXTURE (Static Image instead of SVG Filter) */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      /* Lightweight noise pattern */
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzMyMjJOUl1TAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmAxoIDCQ2YI8LAAAAh0lEQVQ4y2NgwA7EGEQYlBjEGEwYFBiMGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGEwYXBgUGA4A6f4M/W7Q8GkAAAAASUVORK5CYII=");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.03; 
-      mix-blend-mode: overlay;
-    }
-
-    /* NEW: HERO CANVAS (The "Apple-like" animated background) */
-    #hero-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; /* Behind the content */
-      opacity: 0.6; /* Subtle */
-      pointer-events: none; /* Let clicks pass through */
-    }
-
-    /* NEW: APPLE-STYLE TEXT SHIMMER */
-    .text-shimmer {
-      background: linear-gradient(
-        110deg,
-        #EAF0FF 35%,
-        rgba(255, 255, 255, 0.9) 50%,
-        #EAF0FF 65%
-      );
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shimmer 5s ease-in-out infinite;
-    }
-    @keyframes shimmer {
-      0% { background-position: 100% 0; }
-      100% { background-position: -100% 0; }
-    }
-
-    @keyframes drift {
-      0% { background-position: 0% 0%; }
-      100% { background-position: 100% 100%; }
-    }
-
-    a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-    section{padding:80px 0}
-
-    .kicker{
-      margin:0 0 10px;
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:rgba(184,198,255,.78);
-      font-weight:950;
-    }
-    .title{
-      margin:0 0 10px;
-      font-size: clamp(26px, 2.6vw, 36px);
-      letter-spacing:-.5px;
-      font-weight:1200;
-    }
-    .sub{
-      margin:0 0 18px;
-      max-width: 92ch;
-      color:var(--muted);
-    }
-
-    /* Sticky header anchor offset - ADDED #contact */
-    #video, #demos, #what, #pricing, #process, #faq, #contact, #order { scroll-margin-top: calc(var(--navH) + 18px); }
-
-    /* Surfaces */
-    .card{
-      background: linear-gradient(180deg, var(--glass), var(--glass2));
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    /* 1. SPOTLIGHT EFFECT CSS */
-    .spotlight-group {
-      /* Marker class for JS */
-    }
-    .card-spotlight {
-      position: relative;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      overflow: hidden;
-    }
-    /* The Glow Overlay */
-    .card-spotlight::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06), transparent 40%);
-      opacity: 0;
-      transition: opacity 0.5s;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .card-spotlight:hover::after {
-      opacity: 1;
-    }
-    /* The Border Glow */
-    .card-spotlight::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      border-radius: inherit;
-      padding: 1px; /* border width */
-      background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.4), transparent 40%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      z-index: 3;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-    .card-spotlight:hover::before {
-      opacity: 1;
-    }
-
-
-    /* 4. MAGNETIC BUTTONS CSS */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:1050;
-      text-decoration:none;
-      cursor:pointer;
-      /* Important: Transition logic is handled by JS for the 'move', only color/bg here initially */
-      transition: background .12s ease, border-color .12s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Elastic snap back */
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
-      user-select:none;
-      white-space:nowrap;
-      transform-style: preserve-3d;
-      will-change: transform;
-    }
-    /* We remove the default translateY hover because the magnet logic takes over */
-    .btn:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18); }
-    .btn:active{transform: scale(0.96)} 
-    
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(6,182,212,1), rgba(139,92,246,1));
-      border-color: rgba(255,255,255,.12);
-    }
-    .btn-primary:hover{filter: brightness(1.03)}
-    
-    .btn-outline{background: transparent; border-color: rgba(255,255,255,.22)}
-    .btn-ghost{background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.10)}
-
-    /* ROTATING LASER BORDER LOGIC */
-    .btn-moving-border {
-      position: relative;
-      z-index: 0;
-      overflow: hidden;
-      border: none !important; 
-      background: transparent !important; 
-    }
-    .btn-moving-border::before {
-      content: '';
-      position: absolute;
-      z-index: -2;
-      left: -50%;
-      top: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(
-        transparent, 
-        rgba(255,255,255,0.1), 
-        var(--brand), 
-        var(--brand2), 
-        #fff, 
-        transparent 30%
-      );
-      animation: rotateBorder 3s linear infinite;
-    }
-    .btn-moving-border::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      left: 2px;
-      top: 2px;
-      right: 2px;
-      bottom: 2px;
-      background: linear-gradient(135deg, rgba(6,182,212,0.9), rgba(139,92,246,0.9));
-      border-radius: 12px; 
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
-    }
-    @keyframes rotateBorder {
-      100% { transform: rotate(1turn); }
-    }
-
-    /* Laser sheen on primary CTA */
-    .laser{ position:relative; overflow:hidden; }
-    .laser-sheen{
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(280px 90px at 0% 50%, rgba(255,255,255,.34), transparent 62%),
-        radial-gradient(220px 80px at 0% 50%, rgba(6,182,212,.55), transparent 60%);
-      transform: translateX(-120%);
-      opacity:0;
-      pointer-events:none;
-      z-index: 10;
-    }
-    .laser:hover .laser-sheen{ opacity:1; animation: sheenMove 1.1s ease forwards; }
-    @keyframes sheenMove{
-      0%{ transform: translateX(-120%); opacity:0; }
-      15%{ opacity:.80; }
-      100%{ transform: translateX(120%); opacity:0; }
-    }
-
-    /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background: rgba(5,8,19,.72);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.10);
-    }
-    .nav-inner{
-      height: var(--navH);
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      text-decoration:none;
-      font-weight:1200;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .logo{
-      width:80px; height: auto; /* Reduced from 140px to 80px */
-      object-fit: contain; 
-      flex:0 0 auto;
-      border-radius: 12px; /* Curved corners */
-      box-shadow: 0 0 15px rgba(6,182,212,0.3); /* Glow effect */
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .logo:hover {
-      box-shadow: 0 0 25px rgba(6,182,212,0.5); /* Stronger glow on hover */
-      transform: scale(1.02);
-    }
-    
-    .nav-right{
-      display:flex; align-items:center; justify-content:flex-end;
-      gap:10px;
-      flex:1 1 auto;
-    }
-    .nav-links{
-      display:flex; align-items:center; gap:6px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .nav-links a{
-      text-decoration:none;
-      color:rgba(184,198,255,.82);
-      font-weight:1100;
-      font-size:14px;
-      padding:10px 12px;
-      border-radius:14px;
-      transition: background .15s ease, color .15s ease, border-color .15s ease;
-      border:1px solid transparent;
-    }
-    .nav-links a:hover{
-      background: rgba(255,255,255,.07);
-      color:var(--text);
-      border-color: rgba(255,255,255,.10);
-    }
-
-    /* Menu Toggle Button (Mobile) */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 60;
-      width: 30px;
-      height: 30px;
-    }
-    .menu-toggle span {
-      width: 100%;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-    /* Rotate animation for active state */
-    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.active span:nth-child(2) { opacity: 0; }
-    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    @media (max-width: 980px){
-      /* HIDE HEADER BUTTON ON MOBILE to fix congestion */
-      .nav-right .btn { display: none; }
-
-      .nav-links{
-        display: flex; /* Changed from none to flex for toggle */
-        position: fixed;
-        top: var(--navH);
-        left: 0;
-        width: 100%;
-        height: calc(100vh - var(--navH));
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        background: rgba(5,8,19,0.98);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid rgba(255,255,255,.10);
-        padding: 40px 20px;
-        gap: 20px;
-        transform: translateY(-120%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 40;
-      }
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-      }
-      .nav-links a {
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 15px;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-      }
-      .menu-toggle { display: flex; }
-      
-      .hero-grid{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .field-row{grid-template-columns:1fr}
-      section{padding:52px 0}
-      :root{ --navH: 76px; }
-      .video-frame{max-width: 100%;}
-      
-      .comparison-grid { grid-template-columns: 1fr; }
-      .timeline-line { display: none; } /* Hide horizontal line on mobile */
-    }
-
-    /* SCROLL REVEAL ANIMATIONS */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
-    .delay-300 { transition-delay: 300ms; }
-
-    /* HERO */
-    .hero{padding:66px 0 22px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .85fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:rgba(184,198,255,.95);
-      font-weight:1200;
-      font-size:13px;
-      letter-spacing: 0.5px;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(36px, 4.6vw, 60px);
-      line-height:1.04;
-      letter-spacing:-1.0px;
-      font-weight:1250;
-    }
-    .grad{
-      background: linear-gradient(135deg, rgba(6,182,212,1), rgba(139,92,246,1));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .lead{
-      margin:0 0 18px;
-      max-width: 68ch;
-      font-size: clamp(16px, 1.55vw, 18px);
-      color:var(--text);
-      opacity: 0.9;
-    }
-    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
-    .trust{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top:16px;
-      color:rgba(184,198,255,.82);
-      font-weight:1050;
-      font-size:13px;
-    }
-    .trust span{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* HERO SIDE & ASSEMBLY ANIMATION */
-    .hero-panel{
-      padding:18px; position:relative; overflow:hidden;
-      transform-style: preserve-3d;
-      /* Initial State handled by GSAP now */
-      opacity: 1; /* Reset to visible so GSAP can handle from 0 */
-    }
-    
-    /* Removed the CSS :hover transform to let JS handle the 3D physics */
-    
-    /* NEW: Light Sweep Overlay for Animation */
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      top: 0; 
-      left: -100%; 
-      width: 50%; 
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-      transform: skewX(-20deg);
-      pointer-events: none;
-      z-index: 10;
-      /* Animation handled by GSAP */
-    }
-
-    .hero-panel:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 260px at 20% 0%, rgba(6,182,212,.18), transparent 55%),
-        radial-gradient(520px 260px at 90% 10%, rgba(139,92,246,.22), transparent 55%);
-      pointer-events:none;
-    }
-    .hero-panel > *{position:relative}
-    .miniTitle{font-size:18px; margin:0 0 8px; font-weight:1200; letter-spacing:-.2px;}
-    .miniSub{margin:0 0 12px; color:rgba(184,198,255,.78); font-size:13px}
-    .list{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:9px}
-    .list li{display:flex; gap:10px; align-items:flex-start; font-weight:1050; color:rgba(234,240,255,.92)}
-    .check{
-      width:20px; height:20px; border-radius:7px;
-      background: rgba(34,197,94,.16);
-      border:1px solid rgba(34,197,94,.42);
-      display:inline-flex; align-items:center; justify-content:center;
-      flex:0 0 auto;
-      margin-top:2px;
-    }
-
-    /* 3. INFINITE MARQUEE */
-    .marquee-section {
-      padding: 30px 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      background: rgba(255,255,255,0.02);
-      overflow: hidden;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 60px;
-      width: max-content;
-      animation: scroll 40s linear infinite;
-      will-change: transform; /* Optimized animation */
-    }
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      opacity: 0.6;
-      filter: grayscale(100%);
-      transition: opacity 0.3s, filter 0.3s;
-      cursor: default;
-    }
-    .marquee-item:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
-    .marquee-logo {
-      font-size: 24px;
-    }
-    .marquee-text {
-      font-weight: 1200;
-      font-size: 18px;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); } /* Shift by half since we duplicate content */
-    }
-
-    /* NEW: BEFORE/AFTER VISUAL COMPARISON SECTION */
-    .comparison-section {
-      padding: 100px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .comp-box {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 30px; /* Increased padding for frame effect */
-      background: #000; /* Dark frame background */
-    }
-    .comp-old {
-      border: 1px solid #333;
-      opacity: 0.9;
-      transform-origin: center right;
-    }
-    .comp-new {
-      background: #050813;
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 0 50px rgba(6,182,212,0.15);
-      transform-origin: center left;
-    }
-    
-    .comp-label {
-      position: absolute;
-      top: 15px; left: 15px;
-      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;
-      padding: 6px 10px; border-radius: 6px;
-      z-index: 10;
-    }
-    .label-old { background: #333; color: #fff; }
-    .label-new { background: linear-gradient(135deg, var(--brand), var(--brand2)); color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-
-    .mini-stars { width: 20px; height: 2px; background: #fbbf24; border-radius: 2px; }
-
-    /* BROWSER FRAME & SCREENSHOT STYLES (NEW) */
-    .browser-frame {
-      width: 100%; height: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      position: relative;
-      background: #111;
-    }
-    .browser-header {
-      height: 24px;
-      background: #1a1a1a;
-      border-bottom: 1px solid #333;
-      display: flex; align-items: center; padding: 0 10px; gap: 6px;
-      flex: 0 0 auto;
-    }
-    .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: #444; }
-    .browser-dot.red { background: #ff5f57; }
-    .browser-dot.yellow { background: #febc2e; }
-    .browser-dot.green { background: #28c840; }
-    .browser-address {
-      flex: 1; height: 14px; background: #2a2a2a; border-radius: 3px; margin-left: 10px;
-    }
-    
-    .screenshot-container {
-      flex: 1; position: relative; overflow: hidden; background: #000;
-    }
-    .screenshot-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-    }
-
-    /* PREMIUM FRAME SPECIFICS */
-    .browser-frame.premium {
-      border: 1px solid rgba(255,255,255,0.15);
-      background: #050813;
-    }
-    .browser-frame.premium .browser-header {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(5px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .browser-frame.premium .browser-address {
-      background: rgba(255,255,255,0.1);
-    }
-    /* Glass Reflection Overlay */
-    .glass-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 50%);
-      pointer-events: none;
-      z-index: 5;
-    }
-    /* Sweep Highlight */
-    .sweep-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
-      transform: translateX(-100%);
-      pointer-events: none;
-      z-index: 6;
-    }
-
-    /* SHATTER SLICES (Generated by JS) */
-    .shatter-slice {
-      position: absolute;
-      top: 0; bottom: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    /* VIDEO (video-only, medium, glowing border + laser sweep) */
-    #video{ padding-top: 26px; padding-bottom: 26px; }
-    /* UPDATED: Added flex-direction column and gap for the new text */
-    .video-center{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; }
-    
-    .video-frame{
-      position:relative;
-      width:100%;
-      max-width: 760px; /* medium */
-      aspect-ratio:16/9;
-      border-radius:22px;
-      overflow:hidden;
-      background:#000;
-      border:1px solid rgba(255,255,255,.14);
-      /* UPDATED: Added Ambient Glow */
-      box-shadow: 
-        0 0 30px rgba(6,182,212,0.3),
-        0 0 60px rgba(139,92,246,0.2),
-        0 22px 70px rgba(0,0,0,.55);
-      text-decoration:none;
-      display:block;
-      isolation:isolate;
-      transition: box-shadow 0.4s ease, transform 0.4s ease;
-    }
-    /* UPDATED: stronger glow on hover */
-    .video-frame:hover {
-      box-shadow: 
-        0 0 50px rgba(6,182,212,0.5), 
-        0 0 90px rgba(139,92,246,0.3), 
-        0 25px 80px rgba(0,0,0,.65);
-      transform: translateY(-2px);
-    }
-    .video-frame img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      filter:brightness(.92) contrast(1.05);
-      transform: scale(1.01);
-    }
-    .video-frame::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      border-radius:24px;
-      padding:1px;
-      background: linear-gradient(135deg, rgba(6,182,212,.85), rgba(139,92,246,.85), rgba(244,63,94,.55));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity:.70;
-      pointer-events:none;
-      z-index:3;
-    }
-    .video-frame::after{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background:
-        radial-gradient(220px 80px at 0% 50%, rgba(255,255,255,.35), transparent 60%),
-        radial-gradient(260px 90px at 0% 50%, rgba(6,182,212,.55), transparent 65%);
-      transform: translateX(-120%) rotate(8deg);
-      opacity:0;
-      pointer-events:none;
-      z-index:3;
-    }
-    .video-frame:hover::after{
-      opacity:1;
-      animation: videoLaser 1.2s ease forwards;
-    }
-    @keyframes videoLaser{
-      0%{ transform: translateX(-120%) rotate(8deg); opacity:0; }
-      15%{ opacity:.85; }
-      100%{ transform: translateX(120%) rotate(8deg); opacity:0; }
-    }
-    .play-overlay{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: rgba(0,0,0,.20);
-      z-index:2;
-      transition: background .18s ease;
-    }
-    .play-btn{
-      width:76px; height:76px; border-radius:26px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:30px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.10);
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      transition: transform .18s ease, background .18s ease;
-    }
-    .video-frame:hover .play-overlay{ background: rgba(0,0,0,.12); }
-    .video-frame:hover .play-btn{ transform: scale(1.06); background: rgba(255,255,255,.14); }
-
-    /* ADDED: Style for the fallback video link */
-    .video-fallback-link {
-      font-size: 13px;
-      color: rgba(184,198,255,.55);
-      text-decoration: none;
-      transition: color 0.2s ease;
-      font-weight: 500;
-    }
-    .video-fallback-link:hover {
-      color: var(--brand);
-      text-decoration: underline;
-    }
-
-    /* DEMOS */
-    #demos{padding-bottom:86px}
-    .demo-toolbar{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      flex-wrap:wrap; margin: 18px 0 18px;
-    }
-    .searchwrap{position:relative; flex: 1 1 360px; max-width:520px;}
-    .searchicon{
-      position:absolute; left:14px; top:50%;
-      transform:translateY(-50%);
-      color:rgba(184,198,255,.75);
-      font-weight:1100;
-    }
-    .demosearch{
-      width:100%;
-      padding:12px 14px 12px 40px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: #eaf0ff;
-      outline:none;
-      font-weight:1100;
-    }
-    .demosearch::placeholder{color:rgba(184,198,255,.55); font-weight:1100}
-
-    .demo-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));
-      gap:16px;
-      align-items:stretch;
-    }
-
-    /* Modified for Spotlight - removed default border/bg styles as they are handled by spotlight class */
-    .laser-card{
-      position:relative;
-      text-decoration:none;
-      color:#eaf0ff;
-      border-radius:20px;
-      padding:16px;
-      /* Background handled by card-spotlight now, but keeping fallback */
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      box-shadow: 0 18px 60px rgba(0,0,0,.38);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height: 132px;
-      transition: transform .16s ease, box-shadow .16s ease;
-      isolation:isolate;
-    }
-    /* Removed old laser border styles in favor of Spotlight */
-    .laser-card:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 25px 70px rgba(0,0,0,.5);
-    }
-    
-    .laser-top{display:flex; gap:12px; align-items:center; position:relative; z-index:2}
-    .laser-icon{
-      width:48px; height:48px; border-radius:18px;
-      display:flex; align-items:center; justify-content:center;
-      font-size:22px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
-      box-shadow: 0 14px 40px rgba(0,0,0,.22);
-      flex:0 0 auto;
-    }
-    .laser-title{font-weight:1250; letter-spacing:-.2px; margin:0}
-    .laser-sub{font-size:13px; color:rgba(184,198,255,.82); font-weight:1100; margin-top:3px}
-    .laser-bottom{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px; margin-top:14px;
-      position:relative; z-index:2;
-    }
-    .laser-pill{
-      font-size:12px; font-weight:1200;
-      padding:7px 10px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:rgba(234,240,255,.92);
-      white-space:nowrap;
-    }
-    .laser-cta{
-      font-weight:1200;
-      opacity:.95;
-      white-space:nowrap;
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-    }
-    .arrow{
-      width:26px; height:26px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      display:inline-flex; align-items:center; justify-content:center;
-      transition: transform .15s ease, background .15s ease;
-    }
-    .laser-card:hover .arrow{transform: translateX(2px); background: rgba(255,255,255,.10)}
-
-    /* WHAT YOU GET */
-    .grid3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
-    .box{padding:18px}
-    .h3{margin:0 0 8px; font-size:18px; letter-spacing:-.2px; font-weight:1200;}
-    .p{margin:0; color:var(--muted)}
-    .bullets{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:9px}
-    .bullets li{display:flex; gap:10px; align-items:flex-start; font-weight:1050; color:rgba(234,240,255,.92)}
-
-    /* PRICING */
-    #pricing{padding-top:86px; border-top:1px solid rgba(255,255,255,.10)}
-    .pricing{display:grid; grid-template-columns: 1fr 1fr; gap:16px;}
-    .price-card{padding:18px; position:relative; overflow:hidden}
-    .badge{
-      position:absolute; top:14px; right:14px;
-      padding:8px 12px; border-radius:999px;
-      font-weight:1200; font-size:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color:rgba(234,240,255,.92);
-    }
-    .price{font-size:44px; margin:6px 0 0; letter-spacing:-.9px; font-weight:1300;}
-    .price small{font-size:14px; color:var(--muted); font-weight:1150}
-    .divider{height:1px; background:rgba(255,255,255,.12); margin:14px 0}
-    .scope{
-      display:grid; gap:8px;
-      margin-top:12px;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color:rgba(184,198,255,.80);
-      font-weight:1050;
-      font-size:12px;
-    }
-
-    /* PROCESS */
-    .steps{display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;}
-    .step-num{
-      width:34px; height:34px; border-radius:14px;
-      display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(6,182,212,.16);
-      border:1px solid rgba(6,182,212,.35);
-      font-weight:1250;
-      margin-bottom:10px;
-    }
-    /* Timeline Animation Line */
-    .steps-container {
-      position: relative;
-    }
-    .timeline-line {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background: linear-gradient(90deg, var(--brand), var(--brand2));
-      z-index: -1;
-      opacity: 0.5;
-    }
-
-    /* FAQ ACCORDION */
-    .faq-item{
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      padding: 18px 0;
-    }
-    .faq-question{
-      display:flex; justify-content:space-between; align-items:center;
-      cursor:pointer;
-      font-size:18px; font-weight:1100;
-      color:var(--text);
-      user-select:none;
-      transition: color .2s;
-    }
-    .faq-question:hover{ color: #fff; }
-    .faq-answer{
-      max-height:0; overflow:hidden;
-      color:var(--muted);
-      font-size:15px;
-      transition: max-height .3s ease, padding-top .3s ease;
-    }
-    .faq-item.active .faq-answer{
-      max-height:150px;
-      padding-top:10px;
-    }
-    .faq-icon{
-      font-size:20px; transition: transform .3s ease;
-    }
-    .faq-item.active .faq-icon{ transform: rotate(45deg); color:var(--brand); }
-
-
-    /* ORDER FORM */
-    .form-card{padding:18px}
-    .field-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    .input{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(7,11,20,.62);
-      color:var(--text);
-      outline:none;
-      font-weight:1050;
-      transition: border-color .2s, box-shadow .2s;
-    }
-    .input:focus{
-      border-color: var(--brand);
-      box-shadow: 0 0 0 3px rgba(6,182,212,.15);
-    }
-    .input::placeholder{color:rgba(184,198,255,.55); font-weight:1050}
-    textarea.input{min-height:92px; resize:vertical}
-    .fine{font-size:12px; color:rgba(184,198,255,.66); margin:10px 0 0}
-
-    /* CTA strip */
-    .cta{
-      padding:22px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; flex-wrap:wrap;
-    }
-
-    footer{
-      padding:24px 0;
-      background: rgba(7,11,20,.92);
-      backdrop-filter: blur(10px);
-      border-top:1px solid rgba(255,255,255,.12);
-    }
-
-    @media (max-width: 980px){
-      /* HIDE HEADER BUTTON ON MOBILE to fix congestion */
-      .nav-right .btn { display: none; }
-
-      .nav-links{
-        display: flex; /* Changed from none to flex for toggle */
-        position: fixed;
-        top: var(--navH);
-        left: 0;
-        width: 100%;
-        height: calc(100vh - var(--navH));
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        background: rgba(5,8,19,0.98);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid rgba(255,255,255,.10);
-        padding: 40px 20px;
-        gap: 20px;
-        transform: translateY(-120%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 40;
-      }
-      .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-      }
-      .nav-links a {
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        padding: 15px;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-      }
-      .menu-toggle { display: flex; }
-      
-      .hero-grid{grid-template-columns:1fr}
-      .grid3{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .field-row{grid-template-columns:1fr}
-      section{padding:52px 0}
-      :root{ --navH: 76px; }
-      .video-frame{max-width: 100%;}
-      
-      .comparison-grid { grid-template-columns: 1fr; }
-      .timeline-line { display: none; } /* Hide horizontal line on mobile */
-    }
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#0f172a', // Slate 900
+                            800: '#1e293b', // Slate 800
+                            accent: '#10b981', // Emerald 500
+                            light: '#f8fafc', // Slate 50
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* Mobile Menu Transition */
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+    </style>
 </head>
-
-<body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="#top">
-          <!-- UPDATED LOGO HTML -->
-          <img class="logo" src="logo.png" alt="John Paul Growth Logo">
-        </a>
-
-        <div class="nav-right">
-          <!-- MENU TOGGLE BUTTON (MOBILE ONLY) -->
-          <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <nav class="nav-links" aria-label="Primary">
-            <a href="#demos">Live demos</a>
-            <a href="#what">What you get</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#process">Process</a>
-            <a href="#order">Order</a>
-            <a href="#contact">Contact</a>
-          </nav>
-
-          <a class="btn btn-primary laser btn-moving-border" href="#pricing">
-            Design your website now
-            <span class="laser-sheen" aria-hidden="true"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <main id="top" class="hero" style="position:relative; overflow:hidden;">
-    <!-- ADDED: The Canvas Element for the animation -->
-    <canvas id="hero-canvas"></canvas>
-
-    <div class="container">
-      <div class="hero-grid">
-        <!-- Text Content -->
-        <div class="hero-text-content">
-          <span class="pill">⚡ High-End Design • One-Time Fee • Starts at $199</span>
-          <!-- UPDATED: Added text-shimmer class -->
-          <h1 class="text-shimmer">Stop losing customers to outdated websites.</h1>
-          <p class="lead">
-            Get a premium, mobile-first website designed for your business in 3 days. No monthly builders. No tech headaches. Just results.
-          </p>
-
-          <div class="actions">
-            <a class="btn btn-primary laser btn-moving-border" href="#pricing">
-              Get Started for $199
-              <span class="laser-sheen" aria-hidden="true"></span>
-            </a>
-            <a class="btn btn-outline" href="#demos">View live demos</a>
-            <a class="btn btn-ghost" href="#process">See the process</a>
-          </div>
-
-          <div class="trust">
-            <span>✅ Mobile-first</span>
-            <span>✅ Premium glass design</span>
-            <span>✅ Contact form + maps</span>
-            <span>✅ Launch support</span>
-          </div>
-        </div>
-
-        <!-- Assembly Animation Panel -->
-        <aside class="card hero-panel">
-          <p class="kicker">WHAT HAPPENS NEXT</p>
-          <p class="miniTitle">We customize, you approve, we publish.</p>
-          <p class="miniSub">Fast, simple, and polished — no tech headaches.</p>
-
-          <ul class="list">
-            <li><span class="check">✓</span> Choose a demo template + package</li>
-            <li><span class="check">✓</span> We tailor copy, branding, services, contact info</li>
-            <li><span class="check">✓</span> You approve → we launch and test</li>
-          </ul>
-
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
-            <a class="btn btn-primary" href="#demos" style="flex:1 1 auto;">Browse demos</a>
-            <a class="btn btn-outline" href="#order" style="flex:1 1 auto;">Start order</a>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-  </main>
-
-  <!-- INFINITE MARQUEE (NEW) -->
-  <div class="marquee-section">
-    <div class="marquee-track">
-      <!-- First Copy -->
-      <div class="marquee-item"><span class="marquee-logo">⚡</span><span class="marquee-text">TECHCORP</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🔹</span><span class="marquee-text">FINANCEFLOW</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🌿</span><span class="marquee-text">HEALTHPLUS</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🚀</span><span class="marquee-text">GROWTHLABS</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🏢</span><span class="marquee-text">URBANESTATE</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🛒</span><span class="marquee-text">SHOPME</span></div>
-      <div class="marquee-item"><span class="marquee-logo">✈️</span><span class="marquee-text">AEROLOGIC</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🍽️</span><span class="marquee-text">BISTROONE</span></div>
-      
-      <!-- Second Copy (For seamless loop) -->
-      <div class="marquee-item"><span class="marquee-logo">⚡</span><span class="marquee-text">TECHCORP</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🔹</span><span class="marquee-text">FINANCEFLOW</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🌿</span><span class="marquee-text">HEALTHPLUS</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🚀</span><span class="marquee-text">GROWTHLABS</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🏢</span><span class="marquee-text">URBANESTATE</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🛒</span><span class="marquee-text">SHOPME</span></div>
-      <div class="marquee-item"><span class="marquee-logo">✈️</span><span class="marquee-text">AEROLOGIC</span></div>
-      <div class="marquee-item"><span class="marquee-logo">🍽️</span><span class="marquee-text">BISTROONE</span></div>
-    </div>
-  </div>
-
-  <!-- VISUAL COMPARISON SECTION (UPDATED) -->
-  <section class="comparison-section">
-    <div class="container">
-      <div class="comparison-grid">
-        
-        <!-- BEFORE: Real Screenshot / Break Apart -->
-        <div class="comp-box comp-old">
-          <div class="comp-label label-old">Before</div>
-          <div class="browser-frame old">
-            <div class="browser-header">
-              <div class="browser-dot red"></div>
-              <div class="browser-dot yellow"></div>
-              <div class="browser-dot green"></div>
-              <div class="browser-address"></div>
-            </div>
-            <!-- ID used for JS slice generation -->
-            <div class="screenshot-container" id="beforeContainer">
-              <img src="img/imgbasic-template.png" alt="Basic Template Website" class="screenshot-img" id="beforeImg">
-            </div>
-          </div>
-        </div>
-
-        <!-- AFTER: Real Screenshot / Assemble -->
-        <div class="comp-box comp-new">
-          <div class="comp-label label-new">Premium</div>
-          <div class="browser-frame premium">
-            <div class="browser-header">
-              <div class="browser-dot red"></div>
-              <div class="browser-dot yellow"></div>
-              <div class="browser-dot green"></div>
-              <div class="browser-address"></div>
-            </div>
-            <div class="screenshot-container">
-              <div class="glass-overlay"></div>
-              <div class="sweep-overlay"></div>
-              <img src="img/imgpremium-demo.png" alt="Premium Modern Website" class="screenshot-img" id="afterImg">
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO ONLY -->
-  <section id="video" class="reveal">
-    <div class="container video-center">
-      <a class="video-frame"
-         href="https://youtu.be/n0WePjnSVt4"
-         target="_blank"
-         rel="noopener"
-         aria-label="Watch video on YouTube">
-
-        <img src="https://img.youtube.com/vi/n0WePjnSVt4/maxresdefault.jpg" alt="Website demo video thumbnail" />
-        <div class="play-overlay">
-          <div class="play-btn">▶</div>
-        </div>
-      </a>
-
-      <!-- ADDED: Fallback text link -->
-      <a href="https://youtu.be/n0WePjnSVt4" target="_blank" rel="noopener" class="video-fallback-link">
-        If the video is not playing, click here to watch on YouTube →
-      </a>
-    </div>
-  </section>
-
-  <!-- DEMOS -->
-  <section id="demos" class="reveal">
-    <div class="container">
-      <p class="kicker">LIVE DEMOS</p>
-      <h2 class="title">Choose your industry and open a live demo</h2>
-      <p class="sub">Click a card to open the demo website in a new tab.</p>
-
-      <div class="demo-toolbar">
-        <div class="searchwrap">
-          <span class="searchicon">⌕</span>
-          <input id="demoSearch" class="demosearch" placeholder="Search: dentist, lawyer, ecommerce..." />
-        </div>
-        <a class="btn btn-primary" href="#pricing">Go to pricing</a>
-      </div>
-
-      <div id="demoGrid" class="demo-grid spotlight-group">
-
-        <a class="laser-card card-spotlight" data-name="dentist dental clinic" target="_blank" rel="noopener"
-           href="https://dentistry-ixlxst6ogvb7tfyg.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🦷</div>
-            <div>
-              <div class="laser-title">Dentist</div>
-              <div class="laser-sub">Clean, trust-first clinic design</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Health</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="lawn landscape landscaping gardening" target="_blank" rel="noopener"
-           href="https://lawn-care-landscaping-2aldseoipq7ypnwp.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🌿</div>
-            <div>
-              <div class="laser-title">Lawn & Landscape</div>
-              <div class="laser-sub">Outdoor vibe, quote-ready layout</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Home Services</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="consumer services cleaning handyman repairs" target="_blank" rel="noopener"
-           href="https://consumer-services-cleaning-handyman-repairs-gzrj432qzuf8ngb0.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🧰</div>
-            <div>
-              <div class="laser-title">Consumer Services</div>
-              <div class="laser-sub">Simple services + strong CTA</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Local Services</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="hospitality restaurant cafe hotel booking" target="_blank" rel="noopener"
-           href="https://hospitality-restaurant-cafe-hotel-26vz6eg4oyofnidy.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🍽️</div>
-            <div>
-              <div class="laser-title">Hospitality</div>
-              <div class="laser-sub">Menu/booking layout, premium vibe</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Hospitality</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="lawyers legal attorney solicitor" target="_blank" rel="noopener"
-           href="https://lawyers-legal-services-or8fvqkh4i2qorlf.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">⚖️</div>
-            <div>
-              <div class="laser-title">Lawyers</div>
-              <div class="laser-sub">Authority-first, consult-ready</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Professional</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="accountants accounting tax bookkeeping finance" target="_blank" rel="noopener"
-           href="https://accountants-financial-services-7kahqtvdlfotn83t.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">📊</div>
-            <div>
-              <div class="laser-title">Accountants</div>
-              <div class="laser-sub">Clarity + credibility blocks</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Professional</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="ecommerce store shop products" target="_blank" rel="noopener"
-           href="https://ecommerce-store-ugs0aeklne3qmlrn.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🛒</div>
-            <div>
-              <div class="laser-title">Ecommerce</div>
-              <div class="laser-sub">Conversion-first product layout</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Commerce</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="logistics transportation shipping freight" target="_blank" rel="noopener"
-           href="https://logistics-transportation-pr6mdff2gwy97la8.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🚚</div>
-            <div>
-              <div class="laser-title">Logistics</div>
-              <div class="laser-sub">Strong B2B services layout</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Industrial</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="real estate property realtor broker" target="_blank" rel="noopener"
-           href="https://real-estate-9z5b2a5rylkwqv0p.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🏠</div>
-            <div>
-              <div class="laser-title">Real Estate</div>
-              <div class="laser-sub">Lead capture + listings vibe</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Commerce</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="fitness wellness gym training" target="_blank" rel="noopener"
-           href="https://fitness-wellness-rn6atwirkwzwporw.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">💪</div>
-            <div>
-              <div class="laser-title">Fitness & Wellness</div>
-              <div class="laser-sub">Energetic landing + sign-up CTA</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Fitness</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="education coaching tutor training" target="_blank" rel="noopener"
-           href="https://education-coaching-d14ya5iyvdacsoml.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🎓</div>
-            <div>
-              <div class="laser-title">Education & Coaching</div>
-              <div class="laser-sub">Programs + testimonials layout</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Education</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-        <a class="laser-card card-spotlight" data-name="manufacturing factory industrial" target="_blank" rel="noopener"
-           href="https://manufacturing-6ed2q84diy3tueko.builder-preview.com/">
-          <div class="laser-top">
-            <div class="laser-icon">🏭</div>
-            <div>
-              <div class="laser-title">Manufacturing</div>
-              <div class="laser-sub">Capabilities + quality focus</div>
-            </div>
-          </div>
-          <div class="laser-bottom">
-            <span class="laser-pill">Industrial</span>
-            <span class="laser-cta">Open demo <span class="arrow">→</span></span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT YOU GET -->
-  <section id="what" class="reveal">
-    <div class="container">
-      <p class="kicker">WHAT YOU GET</p>
-      <h2 class="title">Everything needed to look premium online</h2>
-      <p class="sub">Modern, clean, conversion-focused pages that make customers trust you and take action.</p>
-
-      <div class="grid3 spotlight-group">
-        <div class="card box card-spotlight">
-          <h3 class="h3">Premium glass design</h3>
-          <p class="p">A modern look that instantly feels credible and high-end.</p>
-          <ul class="bullets">
-            <li><span class="check">✓</span> Mobile-first layout</li>
-            <li><span class="check">✓</span> Clear “Call / Email / Book” CTAs</li>
-            <li><span class="check">✓</span> Fast load structure</li>
-          </ul>
-        </div>
-
-        <div class="card box card-spotlight">
-          <h3 class="h3">Contact-ready setup</h3>
-          <p class="p">So customers can reach you quickly without friction.</p>
-          <ul class="bullets">
-            <li><span class="check">✓</span> Contact form</li>
-            <li><span class="check">✓</span> Maps section</li>
-            <li><span class="check">✓</span> Click-to-call buttons</li>
-          </ul>
-        </div>
-
-        <div class="card box card-spotlight">
-          <h3 class="h3">SEO foundation</h3>
-          <p class="p">Best-practice structure to help you show up on Google.</p>
-          <ul class="bullets">
-            <li><span class="check">✓</span> Titles + meta descriptions</li>
-            <li><span class="check">✓</span> Local keyword targeting</li>
-            <li><span class="check">✓</span> Clean page hierarchy</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="reveal">
-    <div class="container">
-      <p class="kicker">PRICING</p>
-      <h2 class="title">Pick your package</h2>
-
-      <div class="pricing">
-        <div class="card price-card">
-          <div class="badge">Most popular</div>
-          <h3 class="h3">Starter Website</h3>
-          <p class="sub" style="margin:6px 0 0">Perfect if you need a professional website fast.</p>
-          <div class="price">$199 <small>one-time</small></div>
-
-          <div class="divider"></div>
-          <ul class="bullets">
-            <li><span class="check">✓</span> 1–3 pages</li>
-            <li><span class="check">✓</span> Premium design</li>
-            <li><span class="check">✓</span> Contact form + maps</li>
-            <li><span class="check">✓</span> Basic SEO setup</li>
-            <li><span class="check">✓</span> Launch support</li>
-          </ul>
-
-          <div class="scope">
-            <div><strong>Includes:</strong> 2 revision rounds</div>
-            <div><strong>Best for:</strong> local service businesses</div>
-          </div>
-
-          <div class="divider"></div>
-          <a class="btn btn-primary laser" style="width:100%" href="#order" data-plan="Starter Website ($199)">
-            Choose Starter →
-            <span class="laser-sheen" aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div class="card price-card">
-          <h3 class="h3">Pro Website</h3>
-          <p class="sub" style="margin:6px 0 0">More pages + stronger polish for growing businesses.</p>
-          <div class="price">$349 <small>one-time</small></div>
-
-          <div class="divider"></div>
-          <ul class="bullets">
-            <li><span class="check">✓</span> Up to 5 pages</li>
-            <li><span class="check">✓</span> Stronger on-page SEO</li>
-            <li><span class="check">✓</span> Extra sections (FAQs, reviews)</li>
-            <li><span class="check">✓</span> Copy polish included</li>
-            <li><span class="check">✓</span> Priority delivery</li>
-          </ul>
-
-          <div class="scope">
-            <div><strong>Includes:</strong> 3 revision rounds</div>
-            <div><strong>Best for:</strong> higher-ticket services</div>
-          </div>
-
-          <div class="divider"></div>
-          <a class="btn btn-outline" style="width:100%" href="#order" data-plan="Pro Website ($349)">
-            Choose Pro →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process" class="reveal">
-    <div class="container">
-      <p class="kicker">PROCESS</p>
-      <h2 class="title">From template to live website in 3 steps</h2>
-      <p class="sub">Fast, simple, professional. You approve. We publish.</p>
-
-      <div class="steps steps-container">
-        <!-- New Timeline Line for animation -->
-        <div class="timeline-line"></div>
-
-        <div class="card box process-step">
-          <div class="step-num">1</div>
-          <h3 class="h3">Choose a demo + package</h3>
-          <p class="p">Pick your industry template and select Starter or Pro.</p>
-        </div>
-
-        <div class="card box process-step">
-          <div class="step-num">2</div>
-          <h3 class="h3">Send your details</h3>
-          <p class="p">Logo, services, phone/email, location, and photos (if you have them).</p>
-        </div>
-
-        <div class="card box process-step">
-          <div class="step-num">3</div>
-          <h3 class="h3">Approve & launch</h3>
-          <p class="p">You review the draft, request edits, and we launch + test everything.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION (NEW) -->
-  <section id="faq" class="reveal">
-    <div class="container" style="max-width:800px;">
-      <p class="kicker">QUESTIONS?</p>
-      <h2 class="title">Common questions</h2>
-      <p class="sub">Everything you need to know before we start.</p>
-
-      <div class="card" style="padding:10px 24px;">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Do I own the domain and website?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Yes, 100%. You buy the domain (or we help you), and once the site is paid for, it’s entirely yours. No hidden lock-in contracts.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How long does it take?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Typically 2-3 business days from the moment you send us your details. We work fast to get you online.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Can I edit the text later?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Yes. We build on Hostinger's platform which has an easy visual editor. We'll show you how to make simple text changes yourself.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What if I don't have images?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            No problem. We have access to a library of premium, high-resolution stock photos relevant to your industry that we can use at no extra cost.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Is there a monthly maintenance fee?</span>
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">
-            No. We charge a one-time design fee. You only pay for your domain and hosting directly to the provider (e.g., Hostinger). We don't charge hidden monthly fees.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ORDER FORM (Moved Up) -->
-  <section id="order" class="reveal">
-    <div class="container">
-      <p class="kicker">START YOUR ORDER</p>
-      <h2 class="title">Tell us your business details</h2>
-      
-      <div class="card form-card">
-        <!-- UPDATED: Added action="/success.html" for Netlify standard compliance -->
-        <form name="website-order" method="POST" data-netlify="true" action="/success.html" id="orderForm">
-          <input type="hidden" name="form-name" value="website-order" />
-          
-          <div class="field-row">
-            <input class="input" name="name" placeholder="Your name" required>
-            <input class="input" name="business" placeholder="Business name" required>
-          </div>
-
-          <div class="field-row" style="margin-top:10px;">
-            <input class="input" name="email" type="email" placeholder="Email" required>
-            <input class="input" name="phone" placeholder="Phone (optional)">
-          </div>
-
-          <div class="field-row" style="margin-top:10px;">
-            <input class="input" id="plan" name="plan" placeholder="Selected package (Starter / Pro)" required>
-            <input class="input" name="industry" placeholder="Industry (dentist, lawyer, cleaning...)">
-          </div>
-
-          <input class="input" name="city" placeholder="City / Service area" style="margin-top:10px;">
-          <textarea class="input" name="services" placeholder="List your services (comma separated is fine)" style="margin-top:10px;"></textarea>
-          <textarea class="input" name="notes" placeholder="Notes (colors, style, competitor sites you like, booking needs...)" style="margin-top:10px;"></textarea>
-
-          <button id="submitBtn" class="btn btn-primary laser" style="width:100%; margin-top:12px;" type="submit">
-            Submit website order →
-            <span class="laser-sheen" aria-hidden="true"></span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION (Moved Down) -->
-  <section id="contact" class="reveal">
-    <div class="container" style="max-width:700px;">
-      <p class="kicker">GET IN TOUCH</p>
-      <h2 class="title">Have other questions?</h2>
-      <p class="sub">Send us a message and we'll get back to you within 24 hours.</p>
-
-      <div class="card form-card">
-        
-        <!-- SUCCESS MESSAGE (Hidden by default) -->
-        <div id="contactSuccess" style="display:none; text-align:center; padding:40px 20px;">
-          <div style="font-size:40px; margin-bottom:10px;">✨</div>
-          <h3 class="h3" style="color:#fff; margin-bottom:10px;">Message Sent!</h3>
-          <p class="sub" style="margin:0;">Thanks for reaching out. We will get back to you shortly.</p>
-        </div>
-
-        <!-- Standard Netlify Form - Separate from Order Form -->
-        <!-- UPDATED: Added id="contactForm" and removed action="/success.html" to handle via JS -->
-        <form name="general-contact" method="POST" data-netlify="true" id="contactForm">
-          <input type="hidden" name="form-name" value="general-contact" />
-          
-          <div class="field-row">
-            <input class="input" name="contact-name" placeholder="Name" required>
-            <input class="input" name="contact-email" type="email" placeholder="Email" required>
-          </div>
-          
-          <textarea class="input" name="message" placeholder="How can we help?" style="margin-top:10px; min-height:120px;" required></textarea>
-
-          <button id="contactBtn" class="btn btn-outline" style="width:100%; margin-top:12px; justify-content: center;" type="submit">
-            Send Message
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="reveal">
-    <div class="container">
-      <div class="card cta">
-        <div>
-          <h2 class="title" style="margin:0 0 6px">Get your premium website today.</h2>
-          <p class="sub" style="margin:0">For just $199 one-time. Stop waiting. Start growing.</p>
-        </div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap">
-          <a class="btn btn-primary laser btn-moving-border" href="#pricing">
-            Design your website now
-            <span class="laser-sheen" aria-hidden="true"></span>
-          </a>
-          <a class="btn btn-outline" href="#demos">View live demos</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
-      <p class="fine" style="margin:0">© <span id="year"></span> John Paul Growth. All rights reserved.</p>
-      <p class="fine" style="margin:0"><a href="#top" style="text-decoration:none; color:rgba(184,198,255,.85)">Back to top ↑</a></p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // --------------------------------------------------------
-    // PAYPAL CONFIGURATION
-    // --------------------------------------------------------
-    
-    // Updated with your specific PayPal Hosted Payment Links
-    const PAYPAL_STARTER = "https://www.paypal.com/ncp/payment/8B9NWPGA8V2U2";
-    const PAYPAL_PRO = "https://www.paypal.com/ncp/payment/26XLBYL88N526";
-    
-    // --------------------------------------------------------
-
-    // GSAP + ScrollTrigger Setup
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Initialize Lenis for Smooth Scrolling
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple-style easing
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // --------------------------------------------------------
-    // HERO "ASSEMBLY" ANIMATION
-    // --------------------------------------------------------
-    const heroPanel = document.querySelector('.hero-panel');
-    const heroItems = document.querySelectorAll('.hero-panel > *');
-
-    // Float initial state - REMOVED rotateX to prevent conflict with mouse tilt
-    gsap.set(heroPanel, { 
-      y: 60, 
-      opacity: 0, 
-      scale: 0.95,
-      transformPerspective: 1000 
-    });
-    
-    gsap.set(heroItems, { y: 20, opacity: 0 }); // Use heroItems instead of undefined heroTextItems
-
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: 1.5,
-      }
-    });
-
-    heroTl.to(heroPanel, {
-      y: 0,
-      opacity: 1,
-      // rotateX: 0, // Removed to allow interactive tilt
-      scale: 1,
-      duration: 1.2,
-      ease: "power2.out"
-    })
-    .to(heroItems, {
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power2.out"
-    }, "-=1.0");
-
-    // --------------------------------------------------------
-    // 3D TILT & GLOW LOGIC (Interactive)
-    // --------------------------------------------------------
-    (function() {
-      // Helper function to add tilt to any element
-      function addTiltEffect(selector, maxTilt = 8) {
-        const elements = document.querySelectorAll(selector);
-        
-        elements.forEach(card => {
-          // 1. Create Dynamic Glow Element if not present
-          let glow = card.querySelector('.interactive-glow');
-          if (!glow) {
-            glow = document.createElement('div');
-            glow.classList.add('interactive-glow');
-            glow.style.position = 'absolute';
-            glow.style.top = '0';
-            glow.style.left = '0';
-            glow.style.width = '100%';
-            glow.style.height = '100%';
-            glow.style.background = 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), transparent 60%)';
-            glow.style.opacity = '0';
-            glow.style.transition = 'opacity 0.3s ease';
-            glow.style.pointerEvents = 'none';
-            glow.style.mixBlendMode = 'overlay';
-            glow.style.zIndex = '10'; 
-            glow.style.borderRadius = 'inherit';
-            card.appendChild(glow);
-          }
-
-          // Ensure 3D context
-          gsap.set(card, { transformPerspective: 1000, transformStyle: "preserve-3d" });
-
-          // 2. Mouse Movement Logic
-          card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; 
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            // Calculate rotation 
-            const rotateX = ((y - centerY) / centerY) * -maxTilt; 
-            const rotateY = ((x - centerX) / centerX) * maxTilt;
-
-            // Apply 3D Rotation via GSAP
-            gsap.to(card, {
-              rotateX: rotateX,
-              rotateY: rotateY,
-              duration: 0.2, 
-              ease: "power1.out",
-              overwrite: 'auto'
-            });
-
-            // Move the Glow
-            gsap.to(glow, {
-              background: `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2), transparent 60%)`,
-              duration: 0.1,
-              overwrite: 'auto'
-            });
-            glow.style.opacity = '1';
-          });
-
-          // 3. Mouse Leave (Snap Back)
-          card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-              rotateX: 0,
-              rotateY: 0,
-              duration: 0.8,
-              ease: "elastic.out(1, 0.5)",
-              overwrite: 'auto'
-            });
-            glow.style.opacity = '0';
-          });
-        });
-      }
-
-      // Apply to Hero Panel (existing)
-      addTiltEffect('.hero-panel', 8);
-      
-      // Apply to Comparison Cards (NEW)
-      addTiltEffect('.comp-box', 5); // Slightly subtler tilt for these larger cards
-    })();
-
-
-    // --------------------------------------------------------
-    // BEFORE / AFTER ANIMATION - SCREENSHOT SHATTER
-    // --------------------------------------------------------
-    
-    // 1. Setup Slices for "Break Apart" Effect
-    const beforeContainer = document.getElementById('beforeContainer');
-    const beforeImg = document.getElementById('beforeImg');
-    const sliceCount = 10; // Number of vertical strips
-    const slices = [];
-
-    // NOTE: For this to work perfectly, your image aspect ratio should match the container
-    // We use background-image on divs to simulate slices
-    if(beforeContainer && beforeImg) {
-      const imgSrc = beforeImg.src;
-      // Wait for image or just set immediately (assuming cached/fast)
-      
-      // Hide original image but keep it for sizing
-      beforeImg.style.opacity = 0; 
-
-      for(let i=0; i<sliceCount; i++) {
-        const slice = document.createElement('div');
-        slice.classList.add('shatter-slice');
-        slice.style.backgroundImage = `url(${imgSrc})`;
-        
-        // Position and Size
-        const widthPercent = 100 / sliceCount;
-        slice.style.width = `${widthPercent}%`;
-        slice.style.left = `${i * widthPercent}%`;
-        slice.style.height = '100%';
-        
-        // Background Position to show correct part of image
-        // Slice background size must cover full container width
-        slice.style.backgroundSize = `${100 * sliceCount}% 100%`;
-        // Shift position for each slice to reveal that specific part of image
-        slice.style.backgroundPosition = `${(i / (sliceCount - 1)) * 100}% 0`; 
-        
-        beforeContainer.appendChild(slice);
-        slices.push(slice);
-      }
-    }
-
-    // 2. Premium Elements
-    const compNew = document.querySelector('.comp-new');
-    const afterImg = document.getElementById('afterImg');
-    const sweep = document.querySelector('.sweep-overlay');
-
-    // Initial State
-    gsap.set(compNew, { 
-      autoAlpha: 0, 
-      scale: 0.9,
-      z: -50
-    });
-    
-    // Create Timeline
-    const compTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".comparison-section",
-        start: "top 70%",
-        end: "bottom 70%",
-        scrub: 1, 
-      }
-    });
-
-    // Animation Steps
-    
-    // A. Shatter Old
-    if(slices.length > 0) {
-      compTl.to(slices, {
-        x: (i) => (i % 2 === 0 ? -20 : 20) + (Math.random() * 20 - 10), // Explode outward
-        y: (i) => (Math.random() * 100 - 50), // Random vertical scatter
-        rotation: (i) => (Math.random() * 15 - 7.5), // Tilt
-        opacity: 0,
-        scale: 0.9,
-        duration: 1.5,
-        stagger: {
-          amount: 0.5,
-          from: "random" // Random break pattern
-        },
-        ease: "power2.inOut"
-      });
-    }
-
-    // B. Assemble New (Overlapping)
-    compTl.to(compNew, {
-      autoAlpha: 1,
-      scale: 1,
-      z: 0,
-      duration: 1.2,
-      ease: "power2.out"
-    }, "-=1.2"); // Start while old is still breaking
-
-    // C. Sweep Highlight
-    compTl.to(sweep, {
-      x: "150%", // Sweep across
-      duration: 1.5,
-      ease: "power1.inOut"
-    }, "-=0.5");
-
-
-    // --------------------------------------------------------
-    // PROCESS TIMELINE ANIMATION
-    // --------------------------------------------------------
-    const steps = document.querySelectorAll('.process-step');
-    const line = document.querySelector('.timeline-line');
-
-    // Draw the line
-    gsap.to(line, {
-      width: "100%",
-      scrollTrigger: {
-        trigger: ".steps-container",
-        start: "top 70%",
-        end: "bottom 80%",
-        scrub: 1
-      }
-    });
-
-    // Pop up cards sequentially
-    steps.forEach((step, i) => {
-      gsap.from(step, {
-        y: 50,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: step,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        },
-        delay: i * 0.2
-      });
-    });
-
-    // --------------------------------------------------------
-    // GENERAL REVEAL ANIMATION (Fallbacks)
-    // --------------------------------------------------------
-    const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach((el) => {
-      // If manually handled by specific animations, skip
-      if (el.closest('.hero-panel') || el.closest('.comparison-section') || el.closest('.steps-container')) return;
-
-      gsap.fromTo(el, 
-        { y: 30, opacity: 0 },
-        {
-          y: 0, opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-
-
-    // --------------------------------------------------------
-    // SPOTLIGHT EFFECT LOGIC - OPTIMIZED
-    // --------------------------------------------------------
-    (function(){
-      // We target container groups to reduce listeners, or just all cards
-      const containers = document.querySelectorAll(".spotlight-group");
-      
-      containers.forEach(container => {
-        let ticking = false;
-        container.addEventListener("mousemove", (e) => {
-          if(!ticking) {
-            window.requestAnimationFrame(() => {
-              const cards = container.querySelectorAll(".card-spotlight");
-              cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-accent selection:text-white pb-20 md:pb-0">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo links to main website -->
+                <a href="https://johnpaulgrowth.com/" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition group">
+                    <img src="logo/logo.png" alt="John Paul Growth Logo" class="h-10 w-auto">
+                </a>
                 
-                card.style.setProperty("--mouse-x", `${x}px`);
-                card.style.setProperty("--mouse-y", `${y}px`);
-              });
-              ticking = false;
-            });
-            ticking = true;
-          }
-        });
-      });
-    })();
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#methodology" class="text-slate-600 hover:text-brand-accent font-medium transition">Methodology</a>
+                    <a href="#video" class="text-slate-600 hover:text-brand-accent font-medium transition">Process</a>
+                    <a href="#results" class="text-slate-600 hover:text-brand-accent font-medium transition">Results</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-brand-accent font-medium transition">Pricing</a>
+                    <!-- CTA -->
+                    <a href="#contact" class="bg-brand-900 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg shadow-brand-900/20">Get a Free Profile Audit</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="text-slate-600 hover:text-brand-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="https://johnpaulgrowth.com/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Back to Home</a>
+                <a href="#methodology" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Methodology</a>
+                <a href="#video" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Process</a>
+                <a href="#results" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Results</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Pricing</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-accent font-bold mobile-link">Get a Free Profile Audit</a>
+            </div>
+        </div>
+    </nav>
 
-    // MAGNETIC BUTTONS LOGIC - OPTIMIZED
-    (function() {
-      const btns = document.querySelectorAll('.btn');
-      btns.forEach(btn => {
-        let ticking = false;
-        btn.addEventListener('mousemove', (e) => {
-          if(!ticking) {
-            window.requestAnimationFrame(() => {
-              const rect = btn.getBoundingClientRect();
-              const x = e.clientX - rect.left - rect.width / 2;
-              const y = e.clientY - rect.top - rect.height / 2;
-              
-              // Strength of magnetism
-              btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-              btn.style.transition = 'transform 0s'; // Instant movement
-              ticking = false;
-            });
-            ticking = true;
-          }
-        });
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-brand-900 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl"></div>
+        </div>
 
-        btn.addEventListener('mouseleave', () => {
-          btn.style.transform = 'translate(0px, 0px)';
-          btn.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)'; // Elastic snap back
-        });
-      });
-    })();
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 mb-8 fade-in-up">
+                <span class="flex h-2 w-2 rounded-full bg-brand-accent"></span>
+                <span class="text-sm font-medium text-slate-300 tracking-wide uppercase">Top Rated Expert on Upwork (Top 10%)</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6 fade-in-up delay-100">
+                You Don’t Need 10,000 Random Followers. <br class="hidden md:block" />
+                <span class="text-brand-accent">You Need 10 Qualified Conversations.</span>
+            </h1>
+            
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-300 mb-8 fade-in-up delay-200 leading-relaxed">
+                I’m John Paul. I built Growth On LinkedIn because I saw too many B2B founders struggling with ineffective automation and generic outreach strategies. I handle the strategy, research, and daily execution so you can wake up to an inbox full of opportunities, not spam.
+            </p>
 
-    // Demo search filter
-    (function(){
-      const input = document.getElementById("demoSearch");
-      const grid = document.getElementById("demoGrid");
-      if(!input || !grid) return;
-      const cards = Array.from(grid.querySelectorAll(".laser-card"));
-      input.addEventListener("input", () => {
-        const q = (input.value || "").trim().toLowerCase();
-        cards.forEach(c => {
-          const name = (c.getAttribute("data-name") || "").toLowerCase();
-          c.style.display = name.includes(q) ? "flex" : "none";
-        });
-      });
-    })();
+            <!-- Proof Strip -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-10 fade-in-up delay-200">
+                <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-sm text-slate-200 font-medium">150+ Projects Delivered</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-sm text-slate-200 font-medium">10+ Years B2B Outbound</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="text-sm text-slate-200 font-medium">Sales Navigator Expert</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span class="text-sm text-slate-200 font-medium">Inbox Qualification</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="#contact" class="px-8 py-4 bg-brand-accent hover:bg-emerald-400 text-brand-900 font-bold rounded-lg transition transform hover:-translate-y-1 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                    Request My Roadmap
+                    <span class="block text-xs font-normal opacity-80 mt-1">Get a custom strategy</span>
+                </a>
+                <!-- Updated Secondary CTA -->
+                <a href="#pricing" class="px-8 py-4 bg-transparent border-2 border-slate-600 text-white font-semibold rounded-lg hover:border-white hover:bg-white/5 transition">
+                    See Pricing
+                </a>
+            </div>
 
-    // FAQ Accordion Logic
-    document.querySelectorAll('.faq-question').forEach(item => {
-      item.addEventListener('click', () => {
-        const parent = item.parentElement;
-        parent.classList.toggle('active');
-      });
-    });
+            <!-- Dynamic Graph Component -->
+            <div class="mt-16 relative max-w-4xl mx-auto fade-in-up delay-300">
+                <div class="aspect-[16/9] md:aspect-[21/9] w-full bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col shadow-2xl">
+                    <!-- Graph Header -->
+                    <div class="p-6 border-b border-slate-700 bg-slate-800/50 backdrop-blur-sm z-20 flex justify-between items-center">
+                        <div class="text-left">
+                            <h3 class="text-white font-bold text-lg">Connection Acceptance Performance</h3>
+                            <p class="text-slate-400 text-sm">Campaign Analysis: Feb 2025 - Feb 2026</p>
+                        </div>
+                    </div>
 
-    // Capture chosen plan into order form
-    (function(){
-      const planInput = document.getElementById("plan");
-      const planButtons = document.querySelectorAll('[data-plan]');
-      planButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const plan = btn.getAttribute('data-plan');
-          if(planInput) planInput.value = plan;
-        });
-      });
-      if(planInput && !planInput.value) planInput.value = "Starter Website ($199)";
-    })();
+                    <!-- Graph Chart Area -->
+                    <div class="flex-1 relative pt-16 pb-8 px-8 flex items-end justify-center gap-8 md:gap-24">
+                        <!-- Background Grid Lines -->
+                        <div class="absolute inset-0 opacity-10 pointer-events-none" 
+                             style="background-image: linear-gradient(to right, #64748b 1px, transparent 1px), linear-gradient(to bottom, #64748b 1px, transparent 1px); background-size: 40px 40px;">
+                        </div>
 
-    // --------------------------------------------------------
-    // HANDLE CONTACT FORM (AJAX) - NEW
-    // --------------------------------------------------------
-    const contactForm = document.getElementById('contactForm');
-    const contactBtn = document.getElementById('contactBtn');
-    const contactSuccess = document.getElementById('contactSuccess');
+                        <!-- Bar 1: Industry Average -->
+                        <div class="relative w-24 md:w-32 flex flex-col justify-end group h-full">
+                            <div class="relative w-full bg-slate-600/30 rounded-t-md transition-all duration-700 group-hover:bg-slate-600/50 border border-slate-600 border-b-0" style="height: 15%">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-slate-400 font-mono font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">~3%</div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <p class="text-slate-400 text-sm font-medium">Industry Avg</p>
+                                <p class="text-slate-500 text-xs mt-1">Generic Outreach</p>
+                            </div>
+                        </div>
 
-    if(contactForm){
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Loading state
-        const originalText = contactBtn.innerText;
-        contactBtn.innerText = "Sending...";
-        contactBtn.disabled = true;
+                        <!-- Bar 2: JP Growth -->
+                        <div class="relative w-24 md:w-32 flex flex-col justify-end group h-full">
+                            <!-- Highlight Badge -->
+                            <div class="absolute -top-14 left-1/2 -translate-x-1/2 bg-brand-accent text-brand-900 text-xs font-bold px-3 py-1 rounded shadow-lg whitespace-nowrap z-10 mb-2 transform -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 md:opacity-100 md:translate-y-0">
+                                9.3x Higher
+                                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-accent rotate-45"></div>
+                            </div>
+                            
+                            <div class="relative w-full bg-brand-accent rounded-t-md transition-all duration-1000 ease-out hover:brightness-110 shadow-[0_0_30px_rgba(16,185,129,0.3)]" style="height: 70%">
+                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 text-white font-mono font-bold text-2xl md:text-3xl tracking-tighter drop-shadow-md">27.98%</div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <p class="text-white text-sm font-bold">Pipeline Architect</p>
+                                <p class="text-brand-accent text-xs mt-1 font-medium">Human-Centered</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Disclaimer Text -->
+                <p class="text-center text-xs text-slate-400 mt-4 italic">Examples shown from real campaigns. Results vary by niche, offer maturity, and market. (Typical ranges per 30 days)</p>
+            </div>
+        </div>
+    </section>
 
-        const formData = new FormData(contactForm);
+    <!-- The Problem Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 mb-6">Is Your Pipeline Unpredictable?</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        You’re tired of sending cold messages that get ignored and burning budget on ads that don't convert. You have a great B2B offer, but you lack a structured strategy to get it in front of the right decision-makers.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Most LinkedIn strategies fail because they rely on dangerous automation tools and <span class="font-semibold text-brand-900">impersonal, low-quality automation</span> that annoys buyers.
+                    </p>
+                    <div class="p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+                        <p class="font-semibold text-red-900 italic">"You don't need more leads. You need better conversations."</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Unpredictable Revenue</h3>
+                        <p class="text-sm text-slate-500 mt-2">Inconsistent deal flow.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm mt-8">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Poor-Quality Leads</h3>
+                        <p class="text-sm text-slate-500 mt-2">Wasting time on bad fits.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Generic Outreach</h3>
+                        <p class="text-sm text-slate-500 mt-2">Messages that get ignored.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 shadow-sm mt-8">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Spiraling Ad Costs</h3>
+                        <p class="text-sm text-slate-500 mt-2">Low ROI on paid channels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-          // Hide form, show success message
-          contactForm.style.display = 'none';
-          contactSuccess.style.display = 'block';
-        })
-        .catch((error) => {
-          alert("Error sending message. Please email us directly.");
-          contactBtn.innerText = originalText;
-          contactBtn.disabled = false;
-        });
-      });
-    }
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-20 bg-slate-50 scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-900 mb-4">I Don't Just "Generate Leads."<br>I Build Revenue Engines.</h2>
+                <p class="text-lg text-slate-600">My philosophy is simple: Relationships drive revenue, and data drives better relationships. Here’s my 3-step <span class="font-bold text-brand-900">human-centered LinkedIn outreach system</span>, powered by smart workflows.</p>
+            </div>
 
-    // --------------------------------------------------------
-    // HANDLE ORDER FORM SUBMISSION & PAYPAL REDIRECT
-    // --------------------------------------------------------
-    const orderForm = document.getElementById('orderForm');
-    const submitBtn = document.getElementById('submitBtn');
-
-    if(orderForm){
-      orderForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // 1. Show loading state
-        submitBtn.innerText = "Processing details...";
-        submitBtn.style.opacity = "0.7";
-        submitBtn.disabled = true;
-
-        // 2. Prepare data for Netlify
-        const formData = new FormData(orderForm);
-        const planValue = (document.getElementById('plan').value || "").toLowerCase();
-
-        // 3. Send to Netlify (AJAX)
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-          // 4. Success! Redirect to PayPal based on plan
-          submitBtn.innerText = "Redirecting to PayPal...";
-          
-          setTimeout(() => {
-            if(planValue.includes("pro")) {
-              window.location.href = PAYPAL_PRO;
-            } else {
-              window.location.href = PAYPAL_STARTER;
-            }
-          }, 800); // Small delay so they see the success message
-        })
-        .catch((error) => {
-          alert("Something went wrong with the form. Please email us directly.");
-          submitBtn.innerText = "Submit website order →";
-          submitBtn.style.opacity = "1";
-          submitBtn.disabled = false;
-        });
-      });
-    }
-
-    // --------------------------------------------------------
-    // MOBILE MENU TOGGLE LOGIC
-    // --------------------------------------------------------
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-brand-900 rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-6">1</div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Define the Right Buyers</h3>
+                    <p class="text-slate-600">I don't guess. I use advanced boolean search and ABM targeting to build lists of 500–5,000+ high-intent prospects that actually match your Ideal Customer Profile (ICP).</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition duration-300 relative">
+                    <div class="hidden md:block absolute top-1/2 -left-4 w-8 h-0.5 bg-slate-200"></div>
+                    <div class="w-14 h-14 bg-brand-accent rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-6">2</div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Value-First Outreach</h3>
+                    <p class="text-slate-600">No "spray and pray." I craft personalized, conversational sequences that get replies, not blocks. I focus on micro-CTAs that start genuine conversations.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg transition duration-300 relative">
+                    <div class="hidden md:block absolute top-1/2 -left-4 w-8 h-0.5 bg-slate-200"></div>
+                    <div class="w-14 h-14 bg-brand-900 rounded-xl flex items-center justify-center text-white font-bold text-2xl mb-6">3</div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Turn Replies Into Revenue</h3>
+                    <p class="text-slate-600">I manage the replies, qualify the interest, and hand over "ready-to-buy" leads directly to your calendar or CRM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    if(menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-      });
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-white scroll-mt-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-900 mb-4">Watch How I Turn LinkedIn Into Qualified Meetings</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">Watch exactly how I build targeted lists, conduct deep research, and use advanced tools to fill your pipeline.</p>
+            
+            <div class="bg-slate-50 rounded-2xl shadow-lg overflow-hidden border border-slate-200">
+                <div class="aspect-video w-full bg-slate-900 relative group">
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube.com/embed/rc4nxX8Pp0k" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      // Close menu when clicking a link
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          menuToggle.classList.remove('active');
-          navLinks.classList.remove('active');
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-brand-900 text-white scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Real Data. Real Results.</h2>
+                    <p class="text-slate-300 text-lg mb-2">
+                        Numbers don't lie. Here are the average results my clients see when we deploy the "Human-Centered" system.
+                    </p>
+                    <p class="text-slate-400 text-sm mb-8 italic">
+                        Examples shown from real campaigns. Results vary by niche, offer maturity, and market. (Typical ranges per 30 days)
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-4xl font-bold text-brand-accent">300+</p>
+                            <p class="text-sm text-slate-400 mt-1 uppercase tracking-wider">Warm Conversations</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-brand-accent">27.98%</p>
+                            <p class="text-sm text-slate-400 mt-1 uppercase tracking-wider">Acceptance Rate</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-brand-accent">Top 1%</p>
+                            <p class="text-sm text-slate-400 mt-1 uppercase tracking-wider">SSI Rank</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-brand-accent">4-10</p>
+                            <p class="text-sm text-slate-400 mt-1 uppercase tracking-wider">Leads / Month</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/10 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        Case Study: Industrial Packaging
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                            <span class="text-slate-300">Targeting</span>
+                            <span class="font-mono text-brand-accent">Operations Managers</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                            <span class="text-slate-300">Invites Sent</span>
+                            <span class="font-mono text-white">4,608</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/10 pb-2">
+                            <span class="text-slate-300">Accepted</span>
+                            <span class="font-mono text-white">1,309 (28.4%)</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <span class="text-slate-300">Result</span>
+                            <span class="font-mono text-brand-accent font-bold">15 Qualified Leads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="w-24 h-24 bg-brand-900 rounded-full mx-auto flex items-center justify-center text-3xl font-bold text-white mb-6">JP</div>
+            <h2 class="text-3xl font-bold text-brand-900 mb-4">I'm John Paul.</h2>
+            <p class="text-xl text-slate-600 mb-8 font-light">
+                Strategic B2B Lead Generation Specialist & Demand Generation Architect
+            </p>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                For over 10 years, I haven't just "generated leads", I've built sustainable revenue engines for SMBs, IT firms, and SaaS providers across the US, UK, Europe, and UAE. Whether leading high-growth B2B strategies or delivering as a Top-Rated Expert on Upwork (Top 10%), my philosophy remains:
+            </p>
+            <blockquote class="text-2xl font-bold text-brand-900 italic max-w-2xl mx-auto">
+                "Relationships drive revenue, but data drives relationships."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-slate-50 scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-900 mb-4">Partnership Options</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">Choose the package that fits your current growth stage.</p>
+            
+            <!-- Flexible 5-Card Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                
+                <!-- 1. Brand Foundation -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Brand Foundation</h3>
+                        <p class="text-xs text-slate-500 mt-1 italic">Best for: founders who need a conversion-ready profile.</p>
+                        <p class="text-sm text-slate-500 mt-1">Profile & Page Setup.</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$100</span>
+                            <span class="text-slate-500 text-sm">one-time</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Deliverables</p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Profile Audit (Score & Fixes)</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Conversion Copy Rewrite</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Custom Banner Design</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Company Page Setup</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Outcome</p>
+                            <p class="text-sm text-slate-500 italic">"Establishes professional credibility & SEO optimization."</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex justify-center">
+                        <a href="https://www.paypal.com/ncp/payment/QFD55HCBNB6KW" target="_blank" class="block w-full py-2 bg-slate-800 text-white text-center font-semibold rounded-lg hover:bg-slate-700 transition">Select Plan</a>
+                    </div>
+                </div>
+
+                <!-- 2. Network Kickstarter (NEW) -->
+                <div class="bg-white rounded-xl shadow-sm border-2 border-slate-300 overflow-hidden flex flex-col hover:shadow-lg transition relative">
+                    <!-- Optional Badge -->
+                    <!-- <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">NEW</div> -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Network Kickstarter</h3>
+                        <p class="text-xs text-slate-500 mt-1 italic">Best for: new accounts needing fast credible network growth.</p>
+                        <p class="text-sm text-slate-500 mt-1">0-to-500 Connections Sprint.</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$250</span>
+                            <span class="text-slate-500 text-sm">one-time</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Deliverables</p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start font-medium text-brand-900"><span class="text-brand-accent mr-2 mt-0.5">★</span> <span>Everything in Foundation</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Targeted Connection Campaign</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Industry-Specific Research</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Safe, Manual Growth</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Outcome</p>
+                            <p class="text-sm text-slate-500 italic">"Achieve the '500+ Connections' badge for instant social proof."</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex justify-center">
+                        <a href="https://www.paypal.com/ncp/payment/RGBJ3Y7HEZSXE" target="_blank" class="block w-full py-2 bg-slate-800 text-white text-center font-semibold rounded-lg hover:bg-slate-700 transition">Select Plan</a>
+                    </div>
+                </div>
+
+                <!-- 3. Outreach Pilot -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Outreach Pilot</h3>
+                         <p class="text-xs text-slate-500 mt-1 italic">Best for: consistent outreach execution + replies.</p>
+                        <p class="text-sm text-slate-500 mt-1">Execution & Leads.</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$350</span>
+                            <span class="text-slate-500 text-sm">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Deliverables</p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>600-800 Invites / Month</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>4-Step Manual Sequence</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Bi-weekly KPI Report</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Est. Benchmarks</p>
+                            <ul class="space-y-1 text-sm text-slate-500">
+                                <li>• 25-35% Acceptance Rate</li>
+                                <li>• 150-200 New Connections/mo</li>
+                                <li>• 5-10 Warm Conversations/mo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 flex justify-center">
+                        <a href="https://www.paypal.com/ncp/payment/LXA5M8NV9FZSL" target="_blank" class="block w-full py-2 bg-slate-800 text-white text-center font-semibold rounded-lg hover:bg-slate-700 transition">Select Pilot</a>
+                    </div>
+                </div>
+
+                <!-- 4. Growth Engine (Centered on next row in large screens if needed, or part of grid) -->
+                <div class="bg-white rounded-xl shadow-xl border-2 border-brand-accent overflow-hidden flex flex-col transform md:-translate-y-2 relative z-10 lg:col-start-1 lg:col-end-2 lg:justify-self-end xl:col-auto">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Growth Engine</h3>
+                        <p class="text-xs text-slate-500 mt-1 italic">Best for: outreach + authority content + handoff.</p>
+                        <p class="text-sm text-slate-500 mt-1">Strategy & Content.</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-brand-900">$750</span>
+                            <span class="text-slate-500 text-sm">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1 bg-slate-50/50">
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Deliverables</p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start font-medium text-brand-900"><span class="text-brand-accent mr-2 mt-0.5">★</span> <span>Everything in Pilot</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>4 Authority Posts / Month</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>CRM Manual Handoff</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Priority WhatsApp Support</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Est. Benchmarks</p>
+                            <ul class="space-y-1 text-sm text-slate-500">
+                                <li>• 3,000+ Content Impressions</li>
+                                <li>• High Profile Velocity</li>
+                                <li>• 10-20 Warm Leads/mo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 flex justify-center">
+                        <a href="https://www.paypal.com/ncp/payment/9P87RKYAC56UN" target="_blank" class="block w-full py-2 bg-brand-900 text-white text-center font-semibold rounded-lg hover:bg-slate-800 transition shadow-lg shadow-brand-900/20">Select Growth</a>
+                    </div>
+                </div>
+
+                <!-- 5. Architect (Custom) -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition lg:col-start-2 lg:col-end-4 lg:justify-self-start xl:col-auto">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Pipeline Architect</h3>
+                        <p class="text-xs text-slate-500 mt-1 italic">Best for: teams scaling ABM + full inbox management.</p>
+                        <p class="text-sm text-slate-500 mt-1">Full ABM Scale.</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">Custom</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Deliverables</p>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Multi-Profile Mgmt</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Deep ABM Lists (Tier 1-3)</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>LinkedIn Content Strategy</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>30-Day Nurture Sequence</span></li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Full Inbox Management</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase text-brand-accent tracking-wide mb-2">Est. Benchmarks</p>
+                            <p class="text-sm text-slate-500 italic">"15-20 Qualified Opportunities/mo (Typical)"</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="#contact" class="block w-full py-2 bg-brand-900 text-white text-center font-semibold rounded-lg hover:bg-slate-800 transition">Request My Roadmap</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-xs text-slate-500 max-w-2xl mx-auto">
+                    <span class="text-brand-accent font-bold text-lg align-middle mr-1">*</span> 
+                    Results vary based on industry, offer maturity, and market conditions. A healthy B2B pipeline typically requires 2-3 months of consistent activity to stabilize and produce predictable revenue.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification / Contact Form (Updated for Async) -->
+    <section id="contact" class="py-20 bg-white scroll-mt-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Left Column: Text & Steps -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-900 mb-6">Get Your Custom Roadmap</h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Ready to stop guessing? Fill out the form to get a tailored strategy breakdown. Here is what happens next:
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white">
+                                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-slate-900">1. Review</h3>
+                                <p class="mt-2 text-base text-slate-500">I will personally review your website, LinkedIn presence, and current offer.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white">
+                                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-slate-900">2. Assessment</h3>
+                                <p class="mt-2 text-base text-slate-500">I will identify your "low-hanging fruit" prospects and gaps in your targeting.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-accent text-white">
+                                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg leading-6 font-medium text-slate-900">3. Proposal</h3>
+                                <p class="mt-2 text-base text-slate-500">You'll receive a clear roadmap and offer via email to start filling your pipeline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+                    <form id="audit-form" name="pipeline-strategy" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+                        <input type="hidden" name="form-name" value="pipeline-strategy" />
+                        <p class="hidden">
+                            <label>Don’t fill this out: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <!-- New Intent Dropdown -->
+                        <div>
+                            <label for="intent" class="block text-sm font-medium text-slate-700">What do you want? *</label>
+                            <select name="intent" id="intent" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                                <option value="Free Profile Audit" selected>Free Profile Audit</option>
+                                <option value="Custom Roadmap">Custom Roadmap</option>
+                                <option value="General Query">General Query</option>
+                            </select>
+                            <p id="intent-helper" class="text-xs text-slate-500 mt-1 italic">I’ll review your profile and send quick fixes plus a rewrite plan.</p>
+                        </div>
+
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700">Full Name *</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700">Work Email *</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="john@company.com">
+                        </div>
+                         <div>
+                            <label for="website" class="block text-sm font-medium text-slate-700">Company Website / LinkedIn URL *</label>
+                            <input type="text" name="website" id="website" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="linkedin.com/in/john">
+                        </div>
+                        <div>
+                            <label for="offer" class="block text-sm font-medium text-slate-700">What do you sell? *</label>
+                            <input type="text" name="offer" id="offer" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="e.g., SaaS, Consulting, Logistics">
+                        </div>
+                         <div>
+                            <label for="icp" class="block text-sm font-medium text-slate-700">Who do you target? *</label>
+                            <input type="text" name="icp" id="icp" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="e.g., CTOs at FinTechs">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Average deal size (USD)</label>
+                            <select name="deal-value" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                                <option>Less than $1k</option>
+                                <option>$1k - $5k</option>
+                                <option>$5k - $10k</option>
+                                <option>$10k+</option>
+                            </select>
+                        </div>
+
+                         <div>
+                            <label for="message-sequence" class="block text-sm font-medium text-slate-700">Paste your current message sequence (optional)</label>
+                            <textarea name="message-sequence" id="message-sequence" rows="3" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border" placeholder="Paste text here..."></textarea>
+                        </div>
+                        
+                        <!-- Netlify Recaptcha Widget -->
+                        <div data-netlify-recaptcha="true"></div>
+
+                        <button type="submit" id="form-submit-btn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-brand-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent transition">
+                            Request My Free Profile Audit
+                        </button>
+                        <p class="text-xs text-center text-slate-500 mt-3">I reply by email within 24–48 hours.</p>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden absolute inset-0 flex flex-col justify-center items-center p-8 text-center bg-slate-50 rounded-2xl fade-in z-10">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-brand-900 mb-2">Request Received!</h3>
+                        <p class="text-slate-600 mb-6">Thanks! I’ve received your details. I’ll review your inputs and email your <span id="success-type" class="font-semibold">Audit</span> within 24–48 hours.</p>
+                        <button onclick="resetForm()" class="text-brand-accent font-medium hover:underline">Submit another request</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-xl text-white">John Paul</span>
+                <p class="text-sm mt-1">LinkedIn Pipeline Architect</p>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <a href="privacy.html" class="hover:text-brand-accent transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-brand-accent transition">Terms of Service</a>
+                <a href="https://www.linkedin.com/in/leadgenerationforyou" target="_blank" class="hover:text-brand-accent transition">LinkedIn Profile</a>
+                <a href="https://www.upwork.com/freelancers/~012d671526d3da7e92" target="_blank" class="hover:text-brand-accent transition">Upwork Profile</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-center text-xs text-slate-500">
+            &copy; 2026 John Paul Growth. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 md:hidden z-50 transform translate-y-full transition-transform duration-300 shadow-lg">
+        <a href="#contact" class="block w-full py-3 bg-brand-900 text-white text-center font-bold rounded-lg shadow-md hover:bg-slate-800 transition">
+            Get a Free Profile Audit
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuBtn.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+            mobileMenu.classList.toggle('hidden');
         });
-      });
-    }
 
-    // --------------------------------------------------------
-    // HERO CANVAS ANIMATION (The "Apple" Effect)
-    // --------------------------------------------------------
-    (function() {
-      const canvas = document.getElementById('hero-canvas');
-      if (!canvas) return;
-
-      const ctx = canvas.getContext('2d');
-      let width, height;
-      let particles = [];
-      
-      // Configuration
-      const particleCount = window.innerWidth < 768 ? 30 : 60; // Fewer on mobile for speed
-      const connectionDistance = 150;
-      const mouseDistance = 200;
-
-      // Resize logic
-      function resize() {
-        width = canvas.width = canvas.parentElement.offsetWidth;
-        height = canvas.height = canvas.parentElement.offsetHeight;
-      }
-      
-      class Particle {
-        constructor() {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-          this.vx = (Math.random() - 0.5) * 0.5; // Slow drift
-          this.vy = (Math.random() - 0.5) * 0.5;
-          this.size = Math.random() * 2 + 1;
-        }
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+            });
+        });
         
-        update(mouse) {
-          // Move
-          this.x += this.vx;
-          this.y += this.vy;
-          
-          // Bounce off edges
-          if (this.x < 0 || this.x > width) this.vx *= -1;
-          if (this.y < 0 || this.y > height) this.vy *= -1;
-
-          // Mouse Interaction (The "Wow" Factor)
-          if(mouse.x != null) {
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < mouseDistance) {
-              const forceDirectionX = dx / distance;
-              const forceDirectionY = dy / distance;
-              const force = (mouseDistance - distance) / mouseDistance;
-              
-              // Gently push away
-              const directionX = forceDirectionX * force * 0.6;
-              const directionY = forceDirectionY * force * 0.6;
-              this.x -= directionX;
-              this.y -= directionY;
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
-          }
-        }
-        
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(139, 92, 246, 0.5)"; // Brand Purple
-          ctx.fill();
-        }
-      }
+        });
 
-      function init() {
-        resize();
-        for (let i = 0; i < particleCount; i++) {
-          particles.push(new Particle());
-        }
-      }
-
-      let mouse = { x: null, y: null };
-      
-      // Track mouse only over hero section
-      canvas.parentElement.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-      });
-      
-      canvas.parentElement.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-      });
-
-      function animate() {
-        ctx.clearRect(0, 0, width, height);
-        
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update(mouse);
-          particles[i].draw();
-          
-          // Draw connections
-          for (let j = i; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < connectionDistance) {
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(6, 182, 212, ${1 - distance/connectionDistance})`; // Brand Cyan fading
-              ctx.lineWidth = 1;
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
+        // Close menu on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
             }
-          }
+        });
+
+        // Mobile Sticky CTA Logic
+        const heroSection = document.getElementById('hero');
+        const stickyCTA = document.getElementById('mobile-sticky-cta');
+
+        window.addEventListener('scroll', () => {
+            if (heroSection) {
+                const heroRect = heroSection.getBoundingClientRect();
+                // If hero bottom is less than 0, it means it has scrolled out of view completely
+                if (heroRect.bottom < 0) {
+                    stickyCTA.classList.remove('translate-y-full');
+                } else {
+                    stickyCTA.classList.add('translate-y-full');
+                }
+            }
+        });
+
+        // Form Intent Logic & UI Sync
+        const intentSelect = document.getElementById('intent');
+        const submitBtn = document.getElementById('form-submit-btn');
+        const helperText = document.getElementById('intent-helper');
+        const stickyBtnLink = document.querySelector('#mobile-sticky-cta a');
+        
+        // AJAX Form Handling
+        const form = document.getElementById('audit-form');
+        const successMsg = document.getElementById('success-message');
+        const successType = document.getElementById('success-type');
+
+        if (intentSelect && submitBtn && helperText && stickyBtnLink) {
+            intentSelect.addEventListener('change', function() {
+                if (this.value === 'Free Profile Audit') {
+                    submitBtn.textContent = 'Request My Free Profile Audit';
+                    helperText.textContent = 'I’ll review your profile and send quick fixes plus a rewrite plan.';
+                    stickyBtnLink.textContent = 'Get a Free Profile Audit';
+                    if(successType) successType.textContent = "Audit";
+                } else if (this.value === 'General Query') {
+                    submitBtn.textContent = 'Send Message';
+                    helperText.textContent = 'I usually reply within 24 hours.';
+                    stickyBtnLink.textContent = 'Send Message';
+                    if(successType) successType.textContent = "Message";
+                } else {
+                    submitBtn.textContent = 'Request My Roadmap';
+                    helperText.textContent = 'I’ll review your offer and targeting and send a step-by-step outreach plan.';
+                    stickyBtnLink.textContent = 'Request My Roadmap';
+                    if(successType) successType.textContent = "Roadmap";
+                }
+            });
         }
-        requestAnimationFrame(animate);
-      }
 
-      window.addEventListener('resize', () => {
-        resize();
-        particles = [];
-        init();
-      });
+        if (form && successMsg) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                
+                // Attempt to send data to Netlify
+                try {
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString()
+                    })
+                    .then(() => {
+                        form.classList.add('invisible'); 
+                        successMsg.classList.remove('hidden');
+                    })
+                    .catch((error) => {
+                        console.error('Form submission error:', error);
+                        alert("Something went wrong. Please try again.");
+                    });
+                } catch (err) {
+                    console.log('Environment does not support relative URL fetch. Simulating success.');
+                    form.classList.add('invisible'); 
+                    successMsg.classList.remove('hidden');
+                }
+            });
+        }
 
-      init();
-      animate();
-    })();
-  </script>
+        // Reset form function for "Submit another request" button
+        function resetForm() {
+            if (form && successMsg) {
+                form.reset();
+                form.classList.remove('invisible');
+                successMsg.classList.add('hidden');
+                // Reset UI to default intent state if needed, or keep current.
+            }
+        }
+    </script>
 </body>
 </html>
