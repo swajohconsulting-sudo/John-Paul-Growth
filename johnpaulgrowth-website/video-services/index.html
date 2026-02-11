@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Services | John Paul Growth</title>
+    <meta name="description" content="High-converting video content for B2B, B2C, and Enterprise. I handle strategy, scripting, and editing for websites, YouTube, and social media.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://johnpaulgrowth.com/video-services/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://johnpaulgrowth.com/video-services/">
+    <meta property="og:title" content="Video Content Services | John Paul Growth">
+    <meta property="og:description" content="High-converting video content for B2B, B2C, and Enterprise. Script, storyboard, and edit included.">
+    <meta property="og:image" content="https://johnpaulgrowth.com/video-services/assets/img/video-services-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="John Paul Growth Video Services - Professional video production for B2B, B2C, and Enterprise">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://johnpaulgrowth.com/video-services/">
+    <meta name="twitter:title" content="Video Content Services | John Paul Growth">
+    <meta name="twitter:description" content="High-converting video content for B2B, B2C, and Enterprise. Script, storyboard, and edit included.">
+    <meta name="twitter:image" content="https://johnpaulgrowth.com/video-services/assets/img/video-services-og.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "John Paul Growth Video Services",
+      "url": "https://johnpaulgrowth.com/video-services/",
+      "logo": "https://johnpaulgrowth.com/logo/logo.png",
+      "image": "https://johnpaulgrowth.com/video-services/assets/img/video-services-og.png",
+      "description": "High-converting video content for B2B, B2C, and Enterprise. Strategy, scripting, and editing included.",
+      "areaServed": ["United Arab Emirates", "Global"],
+      "sameAs": [
+        "https://www.linkedin.com/in/leadgenerationforyou",
+        "https://www.upwork.com/freelancers/~012d671526d3da7e92"
+      ],
+      "offers": [
+        {
+            "@type": "Offer",
+            "name": "The Hook (30s)",
+            "priceCurrency": "USD",
+            "price": "350.00",
+            "url": "https://johnpaulgrowth.com/video-services/#pricing"
+        },
+        {
+            "@type": "Offer",
+            "name": "The Pitch (60s)",
+            "priceCurrency": "USD",
+            "price": "500.00",
+            "url": "https://johnpaulgrowth.com/video-services/#pricing"
+        },
+        {
+            "@type": "Offer",
+            "name": "The Story (90s)",
+            "priceCurrency": "USD",
+            "price": "750.00",
+            "url": "https://johnpaulgrowth.com/video-services/#pricing"
+        },
+        {
+            "@type": "Offer",
+            "name": "Growth Partner (Monthly)",
+            "priceCurrency": "USD",
+            "price": "1500.00",
+            "url": "https://johnpaulgrowth.com/video-services/#pricing"
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#0f172a', // Slate 900
+                            800: '#1e293b', // Slate 800
+                            accent: '#10b981', // Emerald 500
+                            light: '#f8fafc', // Slate 50
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .play-button {
+            transition: all 0.3s ease;
+        }
+        .group:hover .play-button {
+            transform: scale(1.1);
+            background-color: rgba(16, 185, 129, 0.9);
+        }
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-accent selection:text-white pb-20 md:pb-0">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition group focus:outline-none focus:ring-2 focus:ring-brand-accent rounded-lg p-1">
+                    <img src="logo/logo.png" alt="John Paul Growth Logo" class="h-10 w-auto">
+                </a>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-brand-accent font-medium transition focus:outline-none focus:text-brand-accent">Home</a>
+                    <a href="#why-video" class="text-slate-600 hover:text-brand-accent font-medium transition focus:outline-none focus:text-brand-accent">Why Video</a>
+                    <a href="#portfolio" class="text-slate-600 hover:text-brand-accent font-medium transition focus:outline-none focus:text-brand-accent">Portfolio</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-brand-accent font-medium transition focus:outline-none focus:text-brand-accent">Packages</a>
+                    <!-- CTA -->
+                    <a href="#contact" class="bg-brand-900 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-slate-800 transition shadow-lg shadow-brand-900/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">Request a Video Plan</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu" class="text-slate-600 hover:text-brand-900 focus:outline-none focus:bg-slate-100 p-2 rounded">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Home</a>
+                <a href="#why-video" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Why Video</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Portfolio</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-accent hover:bg-slate-50 mobile-link">Packages</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-accent font-bold mobile-link">Get a Video Plan</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-brand-900 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 mb-8 fade-in-up">
+                <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+                <span class="text-sm font-medium text-slate-300 tracking-wide uppercase">Video Marketing for Any Business</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-6 fade-in-up delay-100">
+                Professional Brand Videos. <br class="hidden md:block" />
+                <span class="text-brand-accent">Without Being on Camera.</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-300 mb-8 fade-in-up delay-200">
+                Script + storyboard + editing using professional stock footage, avatars, or animation. Fast turnaround. No filming required.
+            </p>
+
+            <!-- Trust Strip -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 fade-in-up delay-200 text-sm text-brand-accent font-medium">
+                <div class="flex items-center bg-white/5 rounded-full px-4 py-1 border border-white/10">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Professional Stock/Avatars
+                </div>
+                <div class="flex items-center bg-white/5 rounded-full px-4 py-1 border border-white/10">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    For B2B, B2C & Enterprise
+                </div>
+                <div class="flex items-center bg-white/5 rounded-full px-4 py-1 border border-white/10">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Web, Social & YouTube
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="#pricing" class="px-8 py-4 bg-brand-accent hover:bg-emerald-400 text-brand-900 font-bold rounded-lg transition transform hover:-translate-y-1 shadow-[0_0_20px_rgba(16,185,129,0.3)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent">
+                    View Packages
+                </a>
+                <a href="#portfolio" class="px-8 py-4 bg-transparent border-2 border-slate-600 text-white font-semibold rounded-lg hover:border-white hover:bg-white/5 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                    Watch Examples
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Video Section -->
+    <section id="why-video" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Video for Every Platform</h2>
+                <p class="text-lg text-slate-600">This video service is for any business whether it be B2B or B2C, small, medium or big enterprises, independent or anyone who needs a video.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-brand-900 rounded-lg flex items-center justify-center text-white mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Any Platform</h3>
+                    <p class="text-slate-600">Optimized for your website, YouTube, Instagram, LinkedIn, or ads. One asset, multiple uses.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center text-white mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">No Face Required</h3>
+                    <p class="text-slate-600">We use premium stock footage, professional avatars, and high-end editing. You don't need to be on camera to have a great brand video.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <div class="w-12 h-12 bg-brand-900 rounded-lg flex items-center justify-center text-white mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-900 mb-3">Drive Conversions</h3>
+                    <p class="text-slate-600">Video can significantly improve landing page conversions when aligned with the offer and messaging.</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-slate-400 mt-8 italic">Results vary by offer, audience, and distribution.</p>
+        </div>
+    </section>
+
+    <!-- Selected Works Portfolio (Performance Optimized) -->
+    <section id="portfolio" class="py-20 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Selected Works</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Video Item 1: Velvet Brew -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=XhLEpddU4iE" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Velvet Brew on YouTube">
+                        <img src="https://img.youtube.com/vi/XhLEpddU4iE/hqdefault.jpg" alt="Velvet Brew" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <!-- Play Button -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                        <!-- Mobile Tap Overlay -->
+                        <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Velvet Brew</h3>
+                    <p class="text-slate-400 text-sm">Cinematic Commercial</p>
+                </div>
+
+                <!-- Video Item 2: Premium Stride -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=s47FA7VaqdI" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Premium Stride on YouTube">
+                        <img src="https://img.youtube.com/vi/s47FA7VaqdI/hqdefault.jpg" alt="Premium Stride" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Premium Stride</h3>
+                    <p class="text-slate-400 text-sm">Brand Anthem</p>
+                </div>
+
+                <!-- Video Item 3: The Surfboard Agency -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=UWfYy92OcXU" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: The Surfboard Agency - Investor Film on YouTube">
+                        <img src="https://img.youtube.com/vi/UWfYy92OcXU/hqdefault.jpg" alt="The Surfboard Agency - Investor Film" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">The Surfboard Agency</h3>
+                    <p class="text-slate-400 text-sm">Investor Film</p>
+                </div>
+
+                <!-- Video Item 4: Ultra Luxury Showcase -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=N070hwkSsXI" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Ultra Luxury Showcase on YouTube">
+                        <img src="https://img.youtube.com/vi/N070hwkSsXI/hqdefault.jpg" alt="Ultra Luxury Showcase" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Ultra Luxury Showcase</h3>
+                    <p class="text-slate-400 text-sm">Real Estate Highlight</p>
+                </div>
+
+                <!-- Video Item 5: Strategic Wealth -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=NpjloLBf594" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Strategic Wealth on YouTube">
+                        <img src="https://img.youtube.com/vi/NpjloLBf594/hqdefault.jpg" alt="Strategic Wealth" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Strategic Wealth</h3>
+                    <p class="text-slate-400 text-sm">Corporate Profile</p>
+                </div>
+
+                <!-- Video Item 6: Elevated Living -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=jzl65YLve2k" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Elevated Living on YouTube">
+                        <img src="https://img.youtube.com/vi/jzl65YLve2k/hqdefault.jpg" alt="Elevated Living" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Elevated Living</h3>
+                    <p class="text-slate-400 text-sm">Lifestyle Commercial</p>
+                </div>
+
+                <!-- Video Item 7: Premium Care -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=FZlU1dkoxLg" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Premium Care on YouTube">
+                        <img src="https://img.youtube.com/vi/FZlU1dkoxLg/hqdefault.jpg" alt="Premium Care" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Premium Care</h3>
+                    <p class="text-slate-400 text-sm">Healthcare Experience</p>
+                </div>
+
+                <!-- Video Item 8: Premium Education -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=cecU7XfaloI" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Premium Education on YouTube">
+                        <img src="https://img.youtube.com/vi/cecU7XfaloI/hqdefault.jpg" alt="Premium Education" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Premium Education</h3>
+                    <p class="text-slate-400 text-sm">Brand Film</p>
+                </div>
+                
+                <!-- Video Item 9: Future of Education -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=EHl1TwmPhmI" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Future of Education on YouTube">
+                        <img src="https://img.youtube.com/vi/EHl1TwmPhmI/hqdefault.jpg" alt="Future of Education" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Future of Education</h3>
+                    <p class="text-slate-400 text-sm">Brand Narrative</p>
+                </div>
+
+                <!-- Video Item 10: Logistics Software -->
+                <div class="group">
+                    <a href="https://www.youtube.com/watch?v=gChJed0gZqw" target="_blank" rel="noopener noreferrer" class="block aspect-video bg-black rounded-xl overflow-hidden shadow-2xl relative video-placeholder cursor-pointer" aria-label="Watch video: Logistics Software on YouTube">
+                        <img src="https://img.youtube.com/vi/gChJed0gZqw/hqdefault.jpg" alt="Logistics Software" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/50 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-300">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                            </div>
+                        </div>
+                         <div class="absolute bottom-3 right-3 md:hidden pointer-events-none">
+                             <span class="text-[10px] font-bold uppercase tracking-wider text-white bg-black/60 px-2 py-1 rounded backdrop-blur-sm">Watch on YouTube</span>
+                        </div>
+                    </a>
+                    <h3 class="mt-4 text-xl font-bold text-brand-accent">Logistics Software</h3>
+                    <p class="text-slate-400 text-sm">Tech Explainer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-900 mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="text-4xl font-bold text-brand-900 opacity-20 mb-4">01</div>
+                    <h3 class="font-bold text-brand-900 mb-2">Brief & Brand Kit</h3>
+                    <p class="text-sm text-slate-600">Send your logo, colors, and examples. We define the tone.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="text-4xl font-bold text-brand-900 opacity-20 mb-4">02</div>
+                    <h3 class="font-bold text-brand-900 mb-2">Script & Storyboard</h3>
+                    <p class="text-sm text-slate-600">I create the narrative. You approve the direction before editing starts.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="text-4xl font-bold text-brand-900 opacity-20 mb-4">03</div>
+                    <h3 class="font-bold text-brand-900 mb-2">First Draft</h3>
+                    <p class="text-sm text-slate-600">Receive a polished V1 with stock footage, music, and voiceover.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="text-4xl font-bold text-brand-900 opacity-20 mb-4">04</div>
+                    <h3 class="font-bold text-brand-900 mb-2">Final Polish</h3>
+                    <p class="text-sm text-slate-600">We refine details. You get final MP4s in your needed formats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-900 mb-4">Video Production Packages</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">Clear pricing. Professional editing. Fast turnaround.</p>
+            
+            <!-- Included Strip -->
+            <div class="bg-brand-900 text-white rounded-xl p-6 mb-12 flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
+                <span class="text-brand-accent uppercase tracking-wider text-xs block w-full text-center mb-2">Included in every package</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Script & Storyboard</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Licensed Stock Footage</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Captions + SRT</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Optimized Ratios</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Brand Kit Applied</span>
+                <span class="flex items-center"><svg class="w-4 h-4 mr-2 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> Final MP4 delivery (1080p)</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Package 1: 30s -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">The Hook (30s)</h3>
+                        <p class="text-xs text-slate-500 italic mt-1">Best for: social ads & quick intros</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$350</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Up to 30 Seconds</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Professional Stock/Edit</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Motion Graphics</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>2 Rounds of Revisions</span>
+                            <span class="block text-xs text-slate-400 pl-5 mt-1">Edits to timing, text, visuals.</span></li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100">
+                             <p class="text-xs font-semibold text-slate-500 uppercase">Delivery Time</p>
+                             <p class="text-sm font-bold text-brand-900">3-4 Days</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="order.html?package=hook" class="block w-full py-2 bg-slate-100 text-brand-900 text-center font-semibold rounded-lg hover:bg-slate-200 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">Pay $350 & Start</a>
+                        <p class="text-xs text-slate-500 text-center mt-3 leading-snug">Includes revisions as listed • Covered by our refund & service policy.</p>
+                    </div>
+                </div>
+
+                <!-- Package 2: 60s -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">The Pitch (60s)</h3>
+                        <p class="text-xs text-slate-500 italic mt-1">Best for: VSLs & explainers</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$500</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Up to 60 Seconds</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Professional Stock/Edit</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Male/Female Voice Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Avatar/Character Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Storyboarding Included</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>2 Rounds of Revisions</span>
+                            <span class="block text-xs text-slate-400 pl-5 mt-1">Edits to timing, text, visuals, pacing. New script direction is a new concept.</span></li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100">
+                             <p class="text-xs font-semibold text-slate-500 uppercase">Delivery Time</p>
+                             <p class="text-sm font-bold text-brand-900">5-7 Days</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="order.html?package=pitch" class="block w-full py-2 bg-slate-800 text-white text-center font-semibold rounded-lg hover:bg-slate-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-800">Pay $500 & Start</a>
+                        <p class="text-xs text-slate-500 text-center mt-3 leading-snug">Includes revisions as listed • Covered by our refund & service policy.</p>
+                    </div>
+                </div>
+
+                <!-- Package 3: 90s -->
+                <div class="bg-white rounded-xl shadow-xl border-2 border-brand-accent overflow-hidden flex flex-col transform md:-translate-y-2 relative z-10">
+                     <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">The Story (90s)</h3>
+                        <p class="text-xs text-slate-500 italic mt-1">Best for: case studies & brand films</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-brand-900">$750</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1 bg-slate-50/50">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Up to 90 Seconds</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Cinematic Stock/Edit</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Advanced Motion GFX</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Male/Female Voice Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Avatar/Character Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Storyboarding Included</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>3 Rounds of Revisions</span>
+                            <span class="block text-xs text-slate-400 pl-5 mt-1">Edits to timing, text, visuals, pacing. New script direction is a new concept.</span></li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-200">
+                             <p class="text-xs font-semibold text-slate-500 uppercase">Delivery Time</p>
+                             <p class="text-sm font-bold text-brand-900">7-10 Days</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="order.html?package=story" class="block w-full py-2 bg-brand-900 text-white text-center font-semibold rounded-lg hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">Pay $750 & Start</a>
+                        <p class="text-xs text-slate-500 text-center mt-3 leading-snug">Includes revisions as listed • Covered by our refund & service policy.</p>
+                    </div>
+                </div>
+
+                <!-- Package 4: Monthly -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-lg transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-brand-900">Growth Partner</h3>
+                        <p class="text-xs text-slate-500 mt-1 italic">Best for: ongoing content engine</p>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-3xl font-bold text-slate-900">$1,500</span>
+                            <span class="text-slate-500 text-sm">/month</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-slate-100 flex-1">
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>4 Premium Videos / Mo</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Direct WhatsApp Access</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Male/Female Voice Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Avatar/Character Selection</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Storyboarding Included</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Reasonable revisions within scope</span>
+                            <span class="block text-xs text-slate-400 pl-5 mt-1">Edits to timing, text, visuals, pacing. New script direction is a new concept.</span></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> <span>Priority turnaround available</span></li>
+                        </ul>
+                         <div class="mt-4 pt-4 border-t border-slate-100">
+                             <p class="text-xs font-semibold text-slate-500 uppercase">Delivery Time</p>
+                             <p class="text-sm font-bold text-brand-900">Ongoing Priority</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <a href="#contact" class="block w-full py-2 bg-white border border-slate-300 text-slate-700 text-center font-semibold rounded-lg hover:bg-slate-50 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-300">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Promise -->
+            <div class="max-w-2xl mx-auto mt-12 p-4 bg-slate-50 border border-slate-200 rounded-lg text-center">
+                <p class="text-sm text-slate-600"><strong class="text-brand-900">Quality Promise:</strong> If the first draft direction misses the mark, I will redo the concept once.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-brand-900 mb-4">Request a Video Plan</h2>
+                    <p class="text-slate-600">Ready to start? Fill out the form below to get a custom quote or start your project.</p>
+                </div>
+
+                <form name="video-services-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 max-w-2xl mx-auto">
+                    <input type="hidden" name="form-name" value="video-services-inquiry" />
+                    <p class="hidden">
+                        <label>Don’t fill this out: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700">Full Name *</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700">Work Email *</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                         <div>
+                            <label for="company" class="block text-sm font-medium text-slate-700">Company / Brand Name *</label>
+                            <input type="text" name="company" id="company" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                        </div>
+                        <div>
+                            <label for="website" class="block text-sm font-medium text-slate-700">Website or LinkedIn URL (optional)</label>
+                            <input type="text" name="website" id="website" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="goal" class="block text-sm font-medium text-slate-700">Primary Goal</label>
+                        <select name="goal" id="goal" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                            <option>Website conversions</option>
+                            <option>LinkedIn content</option>
+                            <option>YouTube growth</option>
+                            <option>Product demo</option>
+                            <option>Brand awareness</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-slate-700">Interested Package</label>
+                        <select name="interest" id="interest" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border">
+                            <option>The Hook (30s)</option>
+                            <option>The Pitch (60s)</option>
+                            <option>The Story (90s)</option>
+                            <option>Growth Partner (Monthly)</option>
+                            <option>Custom Project</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-700">Tell me about your video goals</label>
+                        <textarea name="message" id="message" rows="3" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-accent focus:ring-brand-accent p-3 border"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-brand-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent transition">
+                        Send Request
+                    </button>
+                    <p class="text-xs text-center text-slate-500 mt-3">No spam. I reply personally within 1 to 2 business days.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <span class="font-bold text-xl text-white">John Paul</span>
+                <p class="text-sm mt-1">
+                    <a href="https://johnpaulgrowth.com/pipeline/" class="hover:text-brand-accent transition">LinkedIn Pipeline Architect</a>
+                </p>
+            </div>
+            <div class="flex space-x-6 text-sm">
+                <a href="privacy.html" class="hover:text-brand-accent transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-brand-accent transition">Terms of Service</a>
+                <a href="https://www.linkedin.com/in/leadgenerationforyou" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition">LinkedIn Profile</a>
+                <a href="https://www.upwork.com/freelancers/~012d671526d3da7e92" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition">Upwork Profile</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-center text-xs text-slate-500">
+            &copy; 2026 John Paul Growth. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 p-4 md:hidden z-50 transform translate-y-full transition-transform duration-300 shadow-lg">
+        <a href="#contact" class="block w-full py-3 bg-brand-900 text-white text-center font-bold rounded-lg shadow-md hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-900">
+            Book Video Strategy
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if (mobileMenuBtn && mobileMenu) {
+             mobileMenuBtn.addEventListener('click', () => {
+                const nextExpanded = mobileMenuBtn.getAttribute('aria-expanded') !== 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', nextExpanded);
+                mobileMenuBtn.setAttribute('aria-label', nextExpanded ? 'Close menu' : 'Open menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                });
+            });
+            
+             // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                }
+            });
+
+            // Close menu on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+                }
+            });
+        }
+
+        // Mobile Sticky CTA Logic
+        const heroSection = document.getElementById('hero'); 
+        const stickyCTA = document.getElementById('mobile-sticky-cta');
+
+        if (heroSection && stickyCTA) {
+             window.addEventListener('scroll', () => {
+                const heroRect = heroSection.getBoundingClientRect();
+                if (heroRect.bottom < 0) {
+                    stickyCTA.classList.remove('translate-y-full');
+                } else {
+                    stickyCTA.classList.add('translate-y-full');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
